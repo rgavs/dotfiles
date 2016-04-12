@@ -1,0 +1,12 @@
+#!/bin/bash
+#autostart
+# grid layout
+obsetlayout 0 2 2 0
+# background (wallpaper) image
+/home/ryan/.fehbg
+# drawer/panel
+tint2 -c /home/ryan/.config/tint2/tint2rc &
+# audio control panel item
+conky -c ~/.conky/conkyrc &
+alsa-tray --card=hw:0 +tray &
+firefox-aurora &
