@@ -7,7 +7,7 @@
 		<item label="firefox-aurora"> <action name="Execute">
 			<execute>firefox-aurora</execute>
 		</action> </item>
-		<item label="SublimeText"> <action name="Execute">
+		<item label="SublimeText3"> <action name="Execute">
 				<execute>subl3</execute>
 			</action> </item>
 		<item label="terminator"> <action name="Execute">
@@ -15,60 +15,48 @@
 		</action> </item>
 		<separator\>
 		<menu id="1" label="Development">
-			<item label="Android Studio"> <action name="Execute">
-				<execute>sh /ext/android-studio/bin/studio.sh</execute>
-			</action> </item>
 			<item label="GDB"> <action name="Execute">
-				<execute>terminator -e gdb</execute>
-			</action> </item>
-			<item label="IntelliJ IDEA"> <action name="Execute">
-				<execute>idea.sh</execute>
+				<execute>xterm -e gdb</execute>
 			</action> </item>
 			<item label="IDLE"> <action name="Execute">
 				<execute>idle</execute>
 			</action> </item>
-			<item label="Java Mission Control"> <action name="Execute">
-				<execute>jmc</execute>
+			<item label="IntelliJ IDEA"> <action name="Execute">
+				<execute>idea.sh</execute>
 			</action> </item>
 			<item label="Java Monitoring and Management Console"> <action name="Execute">
 				<execute>jconsole</execute>
 			</action> </item>
-			<item label="Java VisualVM"> <action name="Execute">
-				<execute>jvisualvm</execute>
+			<item label="Python"> <action name="Execute">
+				<execute>terminator -e python</execute>
 			</action> </item>
 		</menu>
 		<menu id="2" label="Editors">
 			<item label="Nano"> <action name="Execute">
-				<execute>terminator -e nano</execute>
+				<execute>xterm -e nano</execute>
 			</action> </item>
-			<item label="SublimeText"> <action name="Execute">
+			<item label="SublimeText3"> <action name="Execute">
 				<execute>subl3</execute>
 			</action> </item>
 			<item label="Vi"> <action name="Execute">
-				<execute>terminator -e vi</execute>
+				<execute>xterm -e vi</execute>
 			</action> </item>
 			<item label="Vim"> <action name="Execute">
-				<execute>terminator -e vim</execute>
+				<execute>xterm -e vim</execute>
 			</action> </item>
 		</menu>
-		<menu id="5" label="Multimedia">
+		<menu id="3" label="Multimedia">
 			<item label="ALSA mixer"> <action name="Execute">
-				<execute>terminator -e alsamixer</execute>
+				<execute>xterm -e alsamixer</execute>
 			</action> </item>
 			<item label="Feh"> <action name="Execute">
 				<execute>feh</execute>
 			</action> </item>
-			<item label="FFADO Mixer"> <action name="Execute">
-				<execute>ffado-mixer</execute>
-			</action> </item>
 			<item label="GIMP"> <action name="Execute">
 				<execute>gimp</execute>
 			</action> </item>
-			<item label="Google Play Music Player"> <action name="Execute">
+			<item label="Google Play Music player"> <action name="Execute">
 				<execute>google-play-music-desktop-player</execute>
-			</action> </item>
-			<item label="GIMP"> <action name="Execute">
-				<execute>gimp</execute>
 			</action> </item>
 			<item label="PulseAudio Volume Control"> <action name="Execute">
 				<execute>pavucontrol</execute>
@@ -76,39 +64,22 @@
 			<item label="qpdfview"> <action name="Execute">
 				<execute>qpdfview</execute>
 			</action> </item>
-			<item label="VLC media player"> <action name="Execute">
+			<item label="VLC"> <action name="Execute">
 				<execute>vlc</execute>
 			</action> </item>
 		</menu>
-		<menu id="6" label="Network">
+		<menu id="4" label="Network">
 			<item label="Chromium"> <action name="Execute">
 				<execute>chromium</execute>
 			</action> </item>
 			<item label="firefox-aurora"> <action name="Execute">
 				<execute>firefox-aurora</execute>
 			</action> </item>
-			<item label="Steam"> <action name="Execute">
-				<execute>sh -c "STEAM_RUNTIME=1 steam"</execute>
-			</action> </item>
 			<item label="Vuze"> <action name="Execute">
 				<execute>vuze</execute>
 			</action> </item>
 		</menu>
-		<menu id="3" label="Office">
-			<item label="LibreOffice Slides"> <action name="Execute">
-				<execute>libreoffice --impress</execute>
-			</action> </item>
-			<item label="LibreOffice Spreadsheet"> <action name="Execute">
-				<execute>libreoffice --calc</execute>
-			</action> </item>
-			<item label="LibreOffice Writer"> <action name="Execute">
-				<execute>libreoffice --writer</execute>
-			</action> </item>
-		</menu>
 		<menu id="37" label="System">
-			<item label="Disk Usage Analyzer (baobab)"> <action name="Execute">
-				<execute>baobab</execute>
-			</action> </item>
 			<item label="htop"> <action name="Execute">
 				<execute>terminator -e htop</execute>
 			</action> </item>
@@ -119,8 +90,8 @@
 				<item label="Java Policy Settings"> <action name="Execute">
 					<execute>policytool</execute>
 				</action> </item>
-				<item label="NVIDIA X Server Settings"> <action name="Execute">
-					<execute>nvidia-settings</execute>
+				<item label="lxappearance"> <action name="Execute">
+					<execute>lxappearance</execute>
 				</action> </item>
 				<item label="Openbox Configuration Manager"> <action name="Execute">
 					<execute>obconf</execute>
@@ -128,29 +99,35 @@
 				<item label="Preferred Applications"> <action name="Execute">
 					<execute>libfm-pref-apps</execute>
 				</action> </item>
-				<item label="lxappearance"> <action name="Execute">
-					<execute>lxappearance</execute>
+				<item label="PulseAudio Preferences"> <action name="Execute">
+					<execute>paprefs</execute>
 				</action> </item>
 				<item label="Tint2 panel settings"> <action name="Execute">
 					<execute>tint2conf</execute>
 				</action> </item>
-				<item label="Window Effects"> <action name="Execute">
+				<!-- <item label="Window Effects"> <action name="Execute">
 					<execute>compton-conf</execute>
-				</action> </item>
+				</action> </item> -->
 			</menu>
 			<item label="tint2"> <action name="Execute">
-					<execute>tint2</execute>
+				<execute>tint2</execute>
 			</action> </item>
 		</menu>
 		<menu id="38" label="Utilities">
+			<item label="baobab"> <action name="Execute">
+				<execute>baobab</execute>
+			</action> </item>
+			<item label="Help"> <action name="Execute">
+				<execute>yelp</execute>
+			</action> </item>
 			<item label="Info"> <action name="Execute">
 				<execute>terminator -e info</execute>
 			</action> </item>
 			<item label="pcmanfm"> <action name="Execute">
 				<execute>pcmanfm</execute>
 			</action> </item>
-			<item label="ranger"> <action name="Execute">
-				<execute>terminator -e ranger</execute>
+			<item label="Ranger"> <action name="Execute">
+				<execute>terminator -x ranger</execute>
 			</action> </item>
 		</menu>
 		<separator/>

@@ -1,12 +1,14 @@
 #!/bin/bash
 #autostart
+xset -b
+xinput set-prop 12 275 1
+xinput set-prop 12 277 1
 # grid layout
 obsetlayout 0 2 2 0
 # background (wallpaper) image
-/home/ryan/.fehbg
-# drawer/panel
-tint2 -c /home/ryan/.config/tint2/tint2rc &
+sh /home/ryan/.fehbg
 # audio control panel item
-conky -c ~/.conky/conkyrc &
-alsa-tray --card=hw:0 +tray &
+alsa-tray +tray &
+tint2 -c .config/tint2/tint2rc &
+conky &
 firefox-aurora &

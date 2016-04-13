@@ -298,14 +298,6 @@
       <action name="ToggleDecorations">
       </action>
     </keybind>
-    <keybind key="W-r">
-      <action name="Resize">
-      </action>
-    </keybind>
-    <keybind key="W-m">
-      <action name="Move">
-      </action>
-    </keybind>
     <!-- Keybindings for window MoveResizeTo -->
     <keybind key="W-Left">
       <action name="MoveResizeTo">
@@ -319,7 +311,7 @@
     <keybind key="W-Right">
       <action name="MoveResizeTo">
         <!-- put the window on right side -->
-        <x>960</x>
+        <x>1/2</x>
         <y>0</y>
         <height>100%</height>
         <width>1/2</width>
@@ -417,6 +409,12 @@
     <keybind key="W-i">
       <action name="Iconify"/>
     </keybind>
+    <keybind key="W-m">
+      <action name="Move"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Resize"/>
+    </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-A-Right">
       <action name="DirectionalCycleWindows">
@@ -439,15 +437,10 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="C-A-t">
+    <keybind key="W-c">
       <action name="Execute">
-        <name>Terminator</name>
-        <command>terminator</command>
-      </action>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>eclipse</command>
+        <name>chromium</name>
+        <command>chromium</command>
       </action>
     </keybind>
     <keybind key="W-f">
@@ -456,60 +449,71 @@
         <command>firefox-aurora</command>
       </action>
     </keybind>
-    <keybind key="W-S-s">
+    <keybind key="W-S-i">
       <action name="Execute">
-        <name>Steam</name>
-        <command>sh -c "STEAM_RUNTIME=1 steam"</command>
+        <name>Intellij Idea</name>
+        <command>idea.sh</command>
       </action>
     </keybind>
-    <keybind key="W-s">
+    <keybind key="W-p">
       <action name="Execute">
-        <command>subl3</command>
+        <name>pcmanfm</name>
+        <command>pcmanfm</command>
       </action>
     </keybind>
     <keybind key="W-S-r">
       <action name="Execute">
-        <name>obconf reconfigure</name>
         <command>openbox --reconfigure</command>
       </action>
     </keybind>
-    <keybind key="W-c">
+    <keybind key="W-s">
       <action name="Execute">
-        <command>chromium</command>
+        <name>sublime-text</name>
+        <command>subl3</command>
       </action>
     </keybind>
-    <keybind key="W-S-i">
+    <keybind key="W-t">
       <action name="Execute">
-        <command>idea.sh</command>
+        <name>Terminator</name>
+        <command>terminator</command>
       </action>
     </keybind>
-    <!-- Keybind for Vol +\/ & Brightness +/- -->
-    <keybind key="W-F5">
-      <action name="Execute">
-        <command>alsa-tray -10</command>
-      </action>
-    </keybind>
-    <keybind key="W-F6">
+    <!-- Function key commands -->
+    <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>alsa-tray +10</command>
       </action>
     </keybind>
-    <!-- Keybind for extra keys- HOME/SLEEP... -->
-    <keybind key="XF86HomePage">
-      <action name="GoToDesktop">
-        <to>1</to>
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>alsa-tray -10</command>
       </action>
     </keybind>
-    <keybind key="XF86Sleep">
+    <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>systemctl hybrid-sleep</command>
+        <command>xbacklight -inc 10</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -dec 10</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>scrot -d 0 -z /home/ryan/Pictures/</command>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>scrot -e 'mv $f ~/Pictures/'</command>
       </action>
     </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
-    <doubleClickTime>300</doubleClickTime>
+    <doubleClickTime>500</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
     <screenEdgeWarpTime>0</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
@@ -862,6 +866,15 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+    <application name="*">
+      <decor>no</decor>
+    </application>
+    <application name="terminator">
+      <size>
+        <width>1/2</width>
+        <height>100%</height>
+      </size>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
@@ -956,14 +969,5 @@
 
   # end of the example
 -->
-    <application name="*">
-      <decor>no</decor>
-    </application>
-    <application name="terminator">
-      <size>
-        <width>1/2</width>
-        <height>100%</height>
-      </size>
-    </application>
   </applications>
 </openbox_config>

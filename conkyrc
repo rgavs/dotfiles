@@ -1,20 +1,15 @@
-# Most of this should work for anyone, a few things to look out for:
 # 1: The tempurature option may output two options, just check "sensors" output and adjust the grep accordingly.
-# 2: The Music commands are based on outputs of "mocp -i", so change as neccisary according to the info output of your music player. Note: The first output for the music player shows the path minus the /home/jack/ prefix. You should adjust accordingly or omit it since it only displays very short paths properly.
 # 3: Some of the disk stuff should be adjusted depending on how many partitions you have as well as their names.
 # 4: If you don't have the profont font, adjust accordingly.
 ##############################################
 #  Settings
 ##############################################
-
 background yes
 use_xft yes
 xftfont profontwindows:size=7
 xftalpha 1
-xftfont Droid Sans Mono:size=9
 update_interval 1.0
 total_run_times 0
-
 own_window yes
 own_window_transparent yes
 own_window_type desktop
@@ -23,11 +18,10 @@ double_buffer yes
 minimum_size 200 200
 maximum_width 180
 draw_shades no
-
 draw_outline no
 draw_borders no
 draw_graph_borders no
-default_color 28a096
+default_color ffffff		#28a096
 default_shade_color 000000
 default_outline_color d9d7d6
 alignment top_right
@@ -65,7 +59,7 @@ Filesystem Space Left:
 /$alignr${fs_used /}/${fs_size /}
 $fs_bar
 
-#Temperature:$alignr${execi 2 sensors | grep temp2 | cut -c 15-18 | tail -1}
+Temperature:$alignr${execi 2 sensors | grep temp2 | cut -c 15-18 | tail -1}
 #${execigraph 2 -t sensors | grep temp2 | cut -c 15-16 | tail -1}
 ${color #d1d1d1}MEMORY & I/O $hr${color}
 Memory Usage:$alignr$mem / $memfree
