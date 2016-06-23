@@ -438,11 +438,15 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
-    <keybind key="C-A-t">
+	<!-- Keybindings for running applications -->
+	<keybind key="W-a">
+		<action name="Execute">
+			<command>atom-beta</command>
+		</action>
+	</keybind>
+    <keybind key="W-c">
       <action name="Execute">
-        <name>Terminator</name>
-        <command>terminator</command>
+        <command>chromium</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -450,16 +454,34 @@
         <command>eclipse</command>
       </action>
     </keybind>
+    <keybind key="W-S-r">
+      <action name="Execute">
+        <command>openbox --reconfigure</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-i">
+      <action name="Execute">
+        <command>idea.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <name>firefox-aurora</name>
         <command>firefox-aurora</command>
       </action>
     </keybind>
-    <keybind key="W-S-s">
+    <keybind key="W-g">
       <action name="Execute">
-        <name>Steam</name>
-        <command>sh -c "STEAM_RUNTIME=1 steam"</command>
+        <command>/ext/workspace/Google-Play-Music-Desktop-Player-UNOFFICIAL-/dist/Google\ Play\ Music\ Desktop\ Player-linux-x64/Google\ Play\ Music\ Desktop\ Player</command>
+      </action>
+    </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <command>pcmanfm</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-r">
+      <action name="Execute">
+        <command>openbox --reconfigure</command>
       </action>
     </keybind>
     <keybind key="W-s">
@@ -467,20 +489,19 @@
         <command>subl3</command>
       </action>
     </keybind>
-    <keybind key="W-S-r">
+    <keybind key="W-S-s">
       <action name="Execute">
-        <name>obconf reconfigure</name>
-        <command>openbox --reconfigure</command>
+        <command>sh -c "STEAM_RUNTIME=1 steam"</command>
       </action>
     </keybind>
-    <keybind key="W-c">
+    <keybind key="W-t">
       <action name="Execute">
-        <command>chromium</command>
+        <command>terminator</command>
       </action>
     </keybind>
-    <keybind key="W-S-i">
+    <keybind key="W-v">
       <action name="Execute">
-        <command>idea.sh</command>
+        <command>visual-studio-code</command>
       </action>
     </keybind>
     <!-- Keybind for Vol +\/ & Brightness +/- -->
@@ -503,6 +524,11 @@
     <keybind key="XF86Sleep">
       <action name="Execute">
         <command>systemctl hybrid-sleep</command>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>scrot -e 'mv $f /home/ryan/Pictures/'</command>
       </action>
     </keybind>
   </keyboard>
