@@ -24,8 +24,7 @@ Plug 'scrooloose/syntastic'
 call plug#end()
 "PLUGIN MAPS
 map <F8> :TagbarToggle<CR>
-map <Leader>\ :NERDTreeToggle<CR>
-
+map <leader>\ :NERDTreeToggle<CR>
 
 " GENERAL
 """"""""""
@@ -123,7 +122,6 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
 
-
 " KEY MAPPINGS
 """"""""""""""""
 " Map leader <- <Leader>
@@ -168,3 +166,11 @@ function! HasPaste()
 	return ''
 endfunction
 
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()

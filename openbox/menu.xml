@@ -49,8 +49,8 @@
 			<item label="ALSA mixer"> <action name="Execute">
 				<execute>terminator -e alsamixer</execute>
 			</action> </item>
-			<item label="FFADO Mixer"> <action name="Execute">
-				<execute>ffado-mixer</execute>
+			<item label="Blender"> <action name="Execute">
+				<execute>blender</execute>
 			</action> </item>
 			<item label="GIMP"> <action name="Execute">
 				<execute>gimp</execute>
@@ -110,9 +110,6 @@
 			<item label="lxappearance"> <action name="Execute">
 				<execute>lxappearance</execute>
 			</action> </item>
-			<item label="Tint2 panel settings"> <action name="Execute">
-				<execute>tint2conf</execute>
-			</action> </item>
 			<item label="Window Effects"> <action name="Execute">
 				<execute>compton-conf</execute>
 			</action> </item>
@@ -127,8 +124,8 @@
 			<item label="ranger"> <action name="Execute">
 				<execute>terminator -e ranger</execute>
 			</action> </item>
-			<item label="rxvt"> <action name="Execute">
-				<execute>rxvt</execute>
+			<item label="urxvt"> <action name="Execute">
+				<execute>urxvt</execute>
 			</action> </item>
 			<item label="terminator"> <action name="Execute">
 				<execute>terminator</execute>
