@@ -1,19 +1,39 @@
-"""""""""""""""""""""""""""""""""""""
-"
 "
 "	VIMRC
 "
 "
 """""""""""""""""""""""""""""""""""""
+" PLUGIN
+""""""""""
+try
+	source '/home/ryan/.vim/autoload/plug.vim'
+catch
+endtry
+
+" LOAD PLUGINS
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/syntastic'
+
+call plug#end()
+"PLUGIN MAPS
+map <F8> :TagbarToggle<CR>
+map <leader>\ :NERDTreeToggle<CR>
 
 " GENERAL
 """"""""""
+set autoread
+set nocompatible
+
 " Filetype plugins
 filetype plugin on
 filetype indent on
-
-" Reload if edited elsewhere
-set autoread
 
 " Performance help
 set lazyredraw
@@ -21,6 +41,8 @@ set lazyredraw
 " UI settings
 """""""""""""
 set cmdheight=2
+set showcmd
+set splitright
 
 " Backspace works normally
 set backspace=eol,start,indent
@@ -80,6 +102,8 @@ set wrap "Wrap lines
 
 " MOVEMENT
 """""""""""
+" Enable mouse movement
+set mouse=a
 " Specify the behavior when switching between buffers 
 try
   set switchbuf=useopen,usetab,newtab
@@ -87,11 +111,6 @@ try
 catch
 endtry
 
-" Return to last edit position when opening files
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
 " Remember info about open buffers on close
 set viminfo^=%
 
@@ -101,9 +120,22 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
 
-" RANDOM
+" KEY MAPPINGS
+""""""""""""""""
+" Map leader <- <Leader>
+let mapleader=" "
+
+" <HOME> KEY
+imap <esc>OH <esc>0i
+cmap <esc>OH <home>
+nmap <esc>OH 0
+" <END> KEY
+nmap <esc>OF $
+imap <esc>OF <esc>$a
+cmap <esc>OF <end>
+
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
@@ -120,7 +152,6 @@ map <leader>s? z=
 
 " HELPER FUNCTIONS
 """""""""""""""""""
-
 function! CmdLine(str)
 	exe "menu Foo.Bar :" . a:str
 	emenu Foo.Bar
@@ -135,3 +166,11 @@ function! HasPaste()
 	return ''
 endfunction
 
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()

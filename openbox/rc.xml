@@ -58,7 +58,7 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Droid Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -439,15 +439,15 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-p">
-      <action name="Execute">
-        <command>pcmanfm</command>
-      </action>
+    <keybind key="W-a">
+        <action name="Execute">
+            <command>atom-beta</command>
+        </action>
     </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <command>terminator</command>
-      </action>
+    <keybind key="W-c">
+        <action name="Execute">
+            <command>chromium</command>
+        </action>
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
@@ -455,48 +455,67 @@
       </action>
     </keybind>
     <keybind key="W-f">
-      <action name="Execute">
-        <command>firefox-aurora</command>
-      </action>
+        <action name="Execute">
+            <command>firefox-aurora</command>
+        </action>
     </keybind>
-    <keybind key="W-S-s">
-      <action name="Execute">
-        <command>sh -c "STEAM_RUNTIME=1 steam"</command>
-      </action>
+    <keybind key="W-g">
+        <action name="Execute">
+            <command>/home/ryan/workspace/Google-Play-Music-Desktop-Player-UNOFFICIAL-/dist/Google\ Play\ Music\ Desktop\ Player-linux-x64/Google\ Play\ Music\ Desktop\ Player</command>
+        </action>
+    </keybind>
+    <keybind key="W-S-i">
+        <action name="Execute">
+            <command>idea.sh</command>
+        </action>
+    </keybind>
+    <keybind key="W-p">
+        <action name="Execute">
+            <command>pcmanfm</command>
+        </action>
+    </keybind>
+    <keybind key="W-S-r">
+        <action name="Execute">
+            <command>openbox --reconfigure --config-file /home/ryan/.config/openbox/rc.xml</command>
+        </action>
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
         <command>subl3</command>
       </action>
     </keybind>
-    <keybind key="W-S-r">
-      <action name="Execute">
-        <name>obconf reconfigure</name>
-        <command>openbox --reconfigure</command>
-      </action>
-    </keybind>
-    <keybind key="W-c">
-      <action name="Execute">
-        <command>chromium</command>
-      </action>
-    </keybind>
-    <keybind key="W-S-i">
-      <action name="Execute">
-        <command>idea.sh</command>
-      </action>
+    <keybind key="W-t">
+        <action name="Execute">
+            <command>terminator</command>
+        </action>
     </keybind>
     <!-- Keybind for Vol +\/ & Brightness +/- -->
-    <keybind key="W-F5">
-      <action name="Execute">
-        <command>alsa-tray -10</command>
-      </action>
-    </keybind>
-    <keybind key="W-F6">
+    <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>alsa-tray +10</command>
       </action>
     </keybind>
-    <!-- Keybind for extra keys- HOME/SLEEP... -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute">
+        <command>alsa-tray -10</command>
+      </action>
+  	</keybind>
+	<keybind key="XF86AudioMute">
+      <action name="Execute">
+        <command>alsa-tray mute</command>
+      </action>
+  	</keybind>
+	<keybind key="XF86MonBrightnessUp">
+	  <action name="Execute">
+		<command>xbacklight -inc 10</command>
+	  </action>
+	</keybind>
+    <keybind key="XF86MonBrightnessDown">
+	  <action name="Execute">
+		<command>xbacklight -dec 10</command>
+	  </action>
+	</keybind>
+	<!-- Keybind for extra keys- HOME/SLEEP... -->
     <keybind key="XF86HomePage">
       <action name="GoToDesktop">
         <to>1</to>
