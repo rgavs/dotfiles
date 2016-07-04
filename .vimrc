@@ -20,11 +20,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
+Plug 'pangloss/vim-javascript'
+Plug 'yggdroot/indentline'
 
 call plug#end()
-"PLUGIN MAPS
+"PLUGIN MAPS & OPTIONS
 map <F8> :TagbarToggle<CR>
 map <leader>\ :NERDTreeToggle<CR>
+let g:javascript_plugin_jsdoc = 1
 
 " GENERAL
 """"""""""
@@ -94,6 +97,8 @@ set noswapfile
 " Tab size
 set shiftwidth=4
 set tabstop=4
+set autoindent
+set smartindent
 
 " Command vars
 set ai "Auto indent
