@@ -22,12 +22,19 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
 Plug 'yggdroot/indentline'
+Plug 'ervandew/supertab'
 
 call plug#end()
 "PLUGIN MAPS & OPTIONS
 map <F8> :TagbarToggle<CR>
 map <leader>\ :NERDTreeToggle<CR>
 let g:javascript_plugin_jsdoc = 1
+let g:colors_name = "badwolf"
+let g:badwolf_tabline = 2
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " GENERAL
 """"""""""
@@ -109,10 +116,10 @@ set wrap "Wrap lines
 """""""""""
 " Enable mouse movement
 set mouse=a
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
+	set switchbuf=useopen,usetab,newtab
+	set stal=2
 catch
 endtry
 
@@ -125,7 +132,10 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
+
+" Syntastic statusline
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
 
 " KEY MAPPINGS
 """"""""""""""""
@@ -172,10 +182,11 @@ function! HasPaste()
 endfunction
 
 function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+	let filetype=&ft
+	diffthis
+	vnew | r # | normal! 1Gdd
+	diffthis
+	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
