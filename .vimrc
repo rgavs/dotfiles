@@ -20,13 +20,27 @@ Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/syntastic'
+Plug 'vim-utils/vim-man'
+Plug 'ervandew/supertab'
+Plug 'yggdroot/indentline'
+Plug 'pangloss/vim-javascript'
+
 
 call plug#end()
 "PLUGIN MAPS
 map <F8> :TagbarToggle<CR>
 map <leader>\ :NERDTreeToggle<CR>
 
-" GENERAL
+" Colorscheme
+colo badwolf
+let g:badwolf_tabline=2
+
+" Airline
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+
+
+"irline_left_sep = '▶'  GENERAL
 """"""""""
 set autoread
 set nocompatible
@@ -94,6 +108,8 @@ set noswapfile
 " Tab size
 set shiftwidth=4
 set tabstop=4
+set autoindent
+set smartindent
 
 " Command vars
 set ai "Auto indent
@@ -120,9 +136,9 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
 
-" KEY MAPPINGS
+" KEY MAPPINGS w/<leader>
 """"""""""""""""
 " Map leader <- <Leader>
 let mapleader=" "
@@ -136,19 +152,20 @@ nmap <esc>OF $
 imap <esc>OF <esc>$a
 cmap <esc>OF <end>
 
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-" Spell checking
+" Shortcuts
 """""""""""""""""
+" Spell checking
 " Press ,ss -> toggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
-" Shortcuts using <leader>
 map <leader>sn ]s
+
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+map <leader>tn :tabn<cr>
+map r :redo<cr>
+nmap P p
 
 " HELPER FUNCTIONS
 """""""""""""""""""
