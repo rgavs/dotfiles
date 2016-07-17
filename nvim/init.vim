@@ -1,5 +1,5 @@
 "
-"	VIMRC
+"	NVIM INIT
 "
 "
 """""""""""""""""""""""""""""""""""""
@@ -14,13 +14,16 @@ endtry
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-github-dashboard'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
+Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'valloric/youcompleteme'
+Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
 
 call plug#end()
@@ -28,11 +31,21 @@ call plug#end()
 map <F8> :TagbarToggle<CR>
 map <leader>\ :NERDTreeToggle<CR>
 let g:javascript_plugin_jsdoc = 1
+let g:colors_name = "badwolf"
+let g:badwolf_tabline = 2
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeWinSize=25
+let g:NERDTreeMouseMode=2
 
 " GENERAL
 """"""""""
 set autoread
-set nocompatible
 
 " Filetype plugins
 filetype plugin on
@@ -68,7 +81,6 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
 
 " Colors etc
@@ -109,10 +121,10 @@ set wrap "Wrap lines
 """""""""""
 " Enable mouse movement
 set mouse=a
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
+	set switchbuf=useopen,usetab,newtab
+	set stal=2
 catch
 endtry
 
@@ -125,7 +137,7 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
 
 " KEY MAPPINGS
 """"""""""""""""
@@ -172,10 +184,11 @@ function! HasPaste()
 endfunction
 
 function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+	let filetype=&ft
+	diffthis
+	vnew | r # | normal! 1Gdd
+	diffthis
+	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+

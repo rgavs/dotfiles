@@ -11,18 +11,20 @@ catch
 endtry
 
 " LOAD PLUGINS
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-github-dashboard'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
+Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'valloric/youcompleteme'
+Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
-Plug 'ervandew/supertab'
 
 call plug#end()
 "PLUGIN MAPS & OPTIONS
@@ -35,6 +37,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeWinSize=25
+let g:NERDTreeMouseMode=2
 
 " GENERAL
 """"""""""
@@ -75,7 +82,6 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
 
 " Colors etc

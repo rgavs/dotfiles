@@ -12,8 +12,11 @@ tint2 -c /home/ryan/.config/tint2/tint2rc &
 # audio control panel item
 alsa-tray --card=hw:0 +tray &
 
+xset -b
+
 cd /home/ryan/.config/conky
 conky -c conkyrc -q -d
+
 cd /home/ryan
 
 firefox-aurora &

@@ -471,7 +471,7 @@
     </keybind>
     <keybind key="W-g">
       <action name="Execute">
-        <command>/ext/workspace/Google-Play-Music-Desktop-Player-UNOFFICIAL-/dist/Google\ Play\ Music\ Desktop\ Player-linux-x64/Google\ Play\ Music\ Desktop\ Player</command>
+		<execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
       </action>
     </keybind>
     <keybind key="W-p">
