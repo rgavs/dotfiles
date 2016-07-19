@@ -13,34 +13,44 @@ endtry
 " LOAD PLUGINS
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-github-dashboard'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/syntastic'
-Plug 'vim-utils/vim-man'
 Plug 'ervandew/supertab'
-Plug 'yggdroot/indentline'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'majutsushi/tagbar'
 Plug 'pangloss/vim-javascript'
-
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'valloric/YouCompleteMe'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-utils/vim-man'
+Plug 'yggdroot/indentline'
 
 call plug#end()
+" Map leader <- <Leader>
+let mapleader=" "
+
 "PLUGIN MAPS
 map <F8> :TagbarToggle<CR>
-map <leader>\ :NERDTreeToggle<CR>
-
-" Colorscheme
-colo badwolf
-let g:badwolf_tabline=2
+map <leader>\ :TagbarToggle<CR>
+map <leader>/ :NERDTreeToggle<CR>
 
 " Airline
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
+" Colorscheme
+colo badwolf
+let g:badwolf_tabline=2
 
-"irline_left_sep = '▶'  GENERAL
+" NERDtree
+let g:NERDTreeCascadeOpenSingleChildDir=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=25
+
+" GENERAL
 """"""""""
 set autoread
 set nocompatible
@@ -79,7 +89,6 @@ set mat=2
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
 
 " Colors etc
@@ -122,8 +131,8 @@ set wrap "Wrap lines
 set mouse=a
 " Specify the behavior when switching between buffers 
 try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
+	set switchbuf=useopen,usetab,newtab
+	set stal=2
 catch
 endtry
 
@@ -135,14 +144,8 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
-
 " KEY MAPPINGS w/<leader>
 """"""""""""""""
-" Map leader <- <Leader>
-let mapleader=" "
-
 " <HOME> KEY
 imap <esc>OH <esc>0i
 cmap <esc>OH <home>
@@ -156,16 +159,15 @@ cmap <esc>OF <end>
 """""""""""""""""
 " Spell checking
 " Press ,ss -> toggle spell checking
+map r :redo<cr>
 map <leader>ss :setlocal spell!<cr>
-
 map <leader>sn ]s
-
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 map <leader>tn :tabn<cr>
-map r :redo<cr>
-nmap P p
+map <leader>tc :tabc<cr>
+map <leader>tp :tabp<cr>
 
 " HELPER FUNCTIONS
 """""""""""""""""""
@@ -184,10 +186,10 @@ function! HasPaste()
 endfunction
 
 function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+	let filetype=&ft
+	diffthis
+	vnew | r # | normal! 1Gdd
+	diffthis
+	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
