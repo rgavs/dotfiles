@@ -1,2 +1,4 @@
 # ignore
 .netrwhist
+.git/
+.gitattributes
