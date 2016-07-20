@@ -11,15 +11,15 @@ catch
 endtry
 
 " LOAD PLUGINS
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-abolish'
+"Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'valloric/youcompleteme'
@@ -27,21 +27,30 @@ Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
 
 call plug#end()
+
+" Map leader <- <Leader>
+let mapleader=" "
+
 "PLUGIN MAPS & OPTIONS
 map <F8> :TagbarToggle<CR>
-map <leader>\ :NERDTreeToggle<CR>
-let g:javascript_plugin_jsdoc = 1
+map <leader>\ :TagbarToggle<CR>
+map <leader>/ :NERDTreeToggle<CR>
 let g:colors_name = "badwolf"
 let g:badwolf_tabline = 2
+let g:javascript_plugin_jsdoc = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:NERDTreeCascadeOpenSingleChildDir=1
+let g:NERDTreeHighlightCursorline=1
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeWinSize=25
 let g:NERDTreeMouseMode=2
+let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=25
+autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
 
 " GENERAL
 """"""""""
@@ -92,9 +101,6 @@ syntax enable
 " Style
 set background=dark
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
@@ -108,10 +114,13 @@ set noswapfile
 " Tab/Indentation
 """"""""""""""""""
 " Tab size
-set shiftwidth=4
-set tabstop=4
+set sw=2		" shiftwidth: # spaces for autoindentation
+set ts=2		" tabstop: # visual length of <TAB> character
 set autoindent
 set smartindent
+autocmd FileType html, javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
+autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
 
 " Command vars
 set ai "Auto indent
@@ -137,17 +146,8 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-
-" Syntastic statusline
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-
 " KEY MAPPINGS
 """"""""""""""""
-" Map leader <- <Leader>
-let mapleader=" "
-
 " <HOME> KEY
 imap <esc>OH <esc>0i
 cmap <esc>OH <home>
