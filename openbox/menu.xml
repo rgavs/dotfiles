@@ -7,7 +7,7 @@
 		<item label="firefox-aurora"> <action name="Execute">
 			<execute>firefox-aurora</execute>
 		</action> </item>
-		<item label="Atom"> <action name="Execute">
+		<item label="atom-beta"> <action name="Execute">
 				<execute>atom-beta</execute>
 			</action> </item>
 		<item label="terminator"> <action name="Execute">
@@ -29,7 +29,7 @@
 			</action> </item>
 		</menu>
 		<menu id="2" label="Editors">
-			<item label="Atom-beta"> <action name="Execute">
+			<item label="atom-beta"> <action name="Execute">
 				<execute>atom-beta</execute>
 			</action> </item>
 			<item label="Nano"> <action name="Execute">
@@ -50,7 +50,7 @@
 				<execute>gimp</execute>
 			</action> </item>
 			<item label="Google Play Music Player"> <action name="Execute">
-				<execute>/home/ryan/workspace/Google-Play-Music-Desktop-Player-UNOFFICIAL-/dist/Google\ Play\ Music\ Desktop\ Player-linux-x64/Google\ Play\ Music\ Desktop\ Player</execute>
+					<execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
 			</action> </item>
 			<item label="PulseAudio Volume Control"> <action name="Execute">
 				<execute>pavucontrol</execute>
@@ -108,11 +108,8 @@
 			</action> </item>
 		</menu>
 		<menu id="38" label="Utilities">
-			<item label="Disk Usage Analyzer (baobab)"> <action name="Execute">
+			<item label="baobab"> <action name="Execute">
 				<execute>baobab</execute>
-			</action> </item>
-			<item label="Info"> <action name="Execute">
-				<execute>terminator -e info</execute>
 			</action> </item>
 			<item label="pcmanfm"> <action name="Execute">
 				<execute>pcmanfm</execute>
@@ -120,6 +117,9 @@
 			<item label="ranger"> <action name="Execute">
 				<execute>terminator -e ranger</execute>
 			</action> </item>
+			<item label="terminator"> <action name="Execute">
+				<execute>terminator</execute>
+			</action></item>
 		</menu>
 		<separator/>
 		<menu id="40" label="OpenBox">

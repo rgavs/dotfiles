@@ -1,41 +1,39 @@
-# 1: The tempurature option may output two options, just check "sensors" output and adjust the grep accordingly.
-# 3: Some of the disk stuff should be adjusted depending on how many partitions you have as well as their names.
-# 4: If you don't have the profont font, adjust accordingly.
-##############################################
-#  Settings
-##############################################
-background yes
-use_xft yes
-xftfont profontwindows:size=7
-xftalpha 1
-update_interval 1.0
-total_run_times 0
-own_window yes
-own_window_transparent yes
-own_window_type desktop
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-double_buffer yes
-minimum_size 200 200
-maximum_width 180
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders no
-default_color ffffff		#28a096
-default_shade_color 000000
-default_outline_color d9d7d6
-alignment top_right
-gap_x 12
-gap_y 60
-no_buffers yes
-uppercase no
-cpu_avg_samples 2
-override_utf8_locale no
-update_interval 1.0
-##############################################
-#  Output
-##############################################
-TEXT
+conky.config = {
+--------------------------------------------
+--  Settings
+	use_xft = true,
+	font = 'profontwindows:size=7',
+	xftalpha = 1,
+	update_interval = 1.0,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = true,
+	own_window_type = 'desktop',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	minimum_width = 200, minimum_height = 200,
+	maximum_width = 180,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = '#ffffff',--28a096
+	default_shade_color = '#000000',
+	default_outline_color = '#d9d7d6',
+	alignment = 'top_right',
+	gap_x = 12,
+	gap_y = 60,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	override_utf8_locale = false,
+	update_interval = 1.0,
+};
+
+---------------------------------------------
+--  Output
+---------------------------------------------
+conky.text = [[
 ${color #d1d1d1}SYSTEM INFORMATION $hr${color}
 Host:$alignr$nodename
 Kernel:$alignr$kernel
@@ -59,7 +57,7 @@ Filesystem Space Left:
 /$alignr${fs_used /}/${fs_size /}
 $fs_bar
 
-Temperature:$alignr${execi 2 sensors | grep temp2 | cut -c 15-18 | tail -1}
+#Temperature:$alignr${execi 2 sensors | grep temp2 | cut -c 15-18 | tail -1}
 #${execigraph 2 -t sensors | grep temp2 | cut -c 15-16 | tail -1}
 ${color #d1d1d1}MEMORY & I/O $hr${color}
 Memory Usage:$alignr$mem / $memfree
@@ -72,11 +70,12 @@ ${top name 2}$alignr${top cpu 2}%
 ${top name 3}$alignr${top cpu 3}%
 ${top name 4}$alignr${top cpu 4}%
 ${top name 5}$alignr${top cpu 5}%
----
+---------------------------------------------
 ${top_io name 1}$alignr${top_io io_perc 1}%
 ${top_io name 2}$alignr${top_io io_perc 2}%
 ${top_io name 3}$alignr${top_io io_perc 3}%
----
+---------------------------------------------
 ${top_mem name 1}$alignr${top_mem mem 1}%
 ${top_mem name 2}$alignr${top_mem mem 2}%
 ${top_mem name 3}$alignr${top_mem mem 3}%
+]];

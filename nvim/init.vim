@@ -1,5 +1,5 @@
 "
-"	NVIM INIT.VIM
+"	NVIM INIT
 "
 "
 """""""""""""""""""""""""""""""""""""
@@ -13,18 +13,17 @@ endtry
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'pangloss/vim-javascript'
+Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
-Plug 'valloric/YouCompleteMe'
+Plug 'tpope/vim-projectionist'
+Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-utils/vim-man'
 Plug 'yggdroot/indentline'
 
 call plug#end()
@@ -32,25 +31,24 @@ call plug#end()
 " Map leader <- <Leader>
 let mapleader=" "
 
-" PLUGIN MAPS
+"PLUGIN MAPS & OPTIONS
 map <F8> :TagbarToggle<CR>
 map <leader>\ :TagbarToggle<CR>
 map <leader>/ :NERDTreeToggle<CR>
-
-" Airline
-let g:airline_left_sep='▶'
-let g:airline_right_sep='◀'
-let g:airline#extensions#branch#enabled=1
-
-" Colorscheme
-colo badwolf
-let g:badwolf_tabline=2
-
-" NERDtree
+let g:colors_name = "badwolf"
+let g:badwolf_tabline = 2
+let g:javascript_plugin_jsdoc = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:NERDTreeCascadeOpenSingleChildDir=1
+let g:NERDTreeHighlightCursorline=1
 let g:NERDTreeMinimalUI=1
+let g:NERDTreeMouseMode=2
 let g:NERDTreeShowHidden=1
 let g:NERDTreeWinSize=25
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_global_conf.py'
+let g:ycm_confirm_extra_conf = 0
+autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
 
 " GENERAL
 """"""""""
@@ -113,8 +111,13 @@ set noswapfile
 " Tab/Indentation
 """"""""""""""""""
 " Tab size
-set shiftwidth=4
-set tabstop=4
+set sw=2		" shiftwidth: # spaces for autoindentation
+set ts=2		" tabstop: # visual length of <TAB> character
+set autoindent
+set smartindent
+autocmd FileType html, javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
+autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
 
 " Command vars
 set ai "Auto indent
@@ -140,10 +143,7 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \Line:\ %l\ Col:\ %c\
-
-" KEY MAPPINGS w/<leader>
+" KEY MAPPINGS
 """"""""""""""""
 
 " <HOME> KEY
@@ -155,20 +155,19 @@ nmap <esc>OF $
 imap <esc>OF <esc>$a
 cmap <esc>OF <end>
 
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
 " Spell checking
 """""""""""""""""
 " Press ,ss -> toggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map r :redo<cr>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
-map <leader>tn :tabn<cr>
-map <leader>tc :tabc<cr>
-map <leader>tp :tabp<cr>
 
 " HELPER FUNCTIONS
 """""""""""""""""""
@@ -194,3 +193,4 @@ function! s:DiffWithSaved()
 	exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
