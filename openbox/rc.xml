@@ -316,6 +316,15 @@
         <width>1/2</width>
       </action>
     </keybind>
+    <keybind key="W-S-Left">
+      <action name="MoveResizeTo">
+        <!-- put the window on left side -->
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>1720</width>
+      </action>
+    </keybind>
     <keybind key="W-Right">
       <action name="MoveResizeTo">
         <!-- put the window on right side -->
@@ -325,16 +334,27 @@
         <width>1/2</width>
       </action>
     </keybind>
-    <keybind key="W-S-Up">
-      <action name="ToggleMaximizeFull">
+    <!--Move to the Right/Left edge-->
+    <keybind key="W-C-Left">
+      <action name="MoveResizeTo">
+        <!-- put the window (whatever size) on (top) left side -->
+        <x>0</x>
+        <y>0</y>
+      </action>
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="MoveResizeTo">
+        <!-- put the window (whatever size) on (top) right side -->
+        <x>-0</x>
+        <y>0</y>
       </action>
     </keybind>
     <keybind key="W-Up">
-      <action name="Maximize">
+      <action name="ToggleMaximizeFull">
       </action>
     </keybind>
     <keybind key="W-Down">
-      <action name="ToggleMaximize">
+      <action name="Iconify">
       </action>
     </keybind>
     <!-- and now for the numbers... -->
@@ -418,14 +438,14 @@
       <action name="Iconify"/>
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-A-Right">
-      <action name="DirectionalCycleWindows">
-        <direction>right</direction>
-      </action>
-    </keybind>
     <keybind key="W-A-Left">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
+      </action>
+    </keybind>
+    <keybind key="W-A-Right">
+      <action name="DirectionalCycleWindows">
+        <direction>right</direction>
       </action>
     </keybind>
     <keybind key="W-A-Up">
@@ -438,12 +458,12 @@
         <direction>down</direction>
       </action>
     </keybind>
-	<!-- Keybindings for running applications -->
-	<keybind key="W-a">
-		<action name="Execute">
-			<command>atom-beta</command>
-		</action>
-	</keybind>
+  <!-- Keybindings for running applications -->
+  <keybind key="W-a">
+    <action name="Execute">
+      <command>atom</command>
+    </action>
+  </keybind>
     <keybind key="W-c">
       <action name="Execute">
         <command>chromium</command>
@@ -471,7 +491,7 @@
     </keybind>
     <keybind key="W-g">
       <action name="Execute">
-		<execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
+        <execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
       </action>
     </keybind>
     <keybind key="W-p">

@@ -13,8 +13,10 @@ endtry
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'conormcd/matchindent.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
@@ -115,6 +117,7 @@ set sw=2		" shiftwidth: # spaces for autoindentation
 set ts=2		" tabstop: # visual length of <TAB> character
 set autoindent
 set smartindent
+set expandtab
 autocmd FileType html, javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
@@ -145,7 +148,6 @@ set laststatus=2
 
 " KEY MAPPINGS
 """"""""""""""""
-
 " <HOME> KEY
 imap <esc>OH <esc>0i
 cmap <esc>OH <home>
@@ -168,6 +170,9 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprevious<CR>
 
 " HELPER FUNCTIONS
 """""""""""""""""""
