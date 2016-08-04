@@ -21,6 +21,9 @@
 			<item label="Nano"> <action name="Execute">
 				<execute>terminator -e nano</execute>
 			</action> </item>
+			<item label="Nvim"> <action name="Execute">
+				<execute>terminator -e nvim</execute>
+			</action> </item>
 			<item label="SublimeText"> <action name="Execute">
 				<execute>subl3</execute>
 			</action> </item>
@@ -40,6 +43,9 @@
 			</action> </item>
 			<item label="Idea Intellij"> <action name="Execute">
 				<execute>idea.sh</execute>
+			</action> </item>
+			<item label="Texmaker"> <action name="Execute">
+				<execute>texmaker</execute>
 			</action> </item>
 			<item label="Visual Studio"> <action name="Execute">
 				<execute>visual-studio-code</execute>
@@ -64,7 +70,7 @@
 			<item label="qpdfview"> <action name="Execute">
 				<execute>qpdfview</execute>
 			</action> </item>
-			<item label="VLC media player"> <action name="Execute">
+			<item label="VLC"> <action name="Execute">
 				<execute>vlc</execute>
 			</action> </item>
 		</menu>
@@ -100,9 +106,6 @@
 			<item label="Openbox Configuration Manager"> <action name="Execute">
 				<execute>obconf</execute>
 			</action> </item>
-			<item label="Preferred Applications"> <action name="Execute">
-				<execute>libfm-pref-apps</execute>
-			</action> </item>
 			<item label="lxappearance"> <action name="Execute">
 				<execute>lxappearance</execute>
 			</action> </item>
@@ -130,7 +133,9 @@
 		<separator/>
 		<menu id="40" label="OpenBox">
 			<menu id="client-list-menu"/>
-			<item label="Reconfigure"> <action name="Reconfigure"/> </item>
+			<item label="Reconfigure"> <action name="Execute">
+				<execute>sh -c 'openbox --reconfigure --config-file /home/ryan/.config/openbox/rc.xml'</execute>
+			</action> </item>
 			<separator/>
 			<item label="Exit"> <action name="Exit"/> </item>
 		</menu>

@@ -354,7 +354,7 @@
       </action>
     </keybind>
     <keybind key="W-Down">
-      <action name="Iconify">
+      <action name="ToggleMaximizeFull">
       </action>
     </keybind>
     <!-- and now for the numbers... -->
@@ -474,11 +474,6 @@
         <command>eclipse</command>
       </action>
     </keybind>
-    <keybind key="W-S-r">
-      <action name="Execute">
-        <command>openbox --reconfigure</command>
-      </action>
-    </keybind>
     <keybind key="W-S-i">
       <action name="Execute">
         <command>idea.sh</command>
@@ -519,12 +514,7 @@
         <command>terminator</command>
       </action>
     </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>visual-studio-code</command>
-      </action>
-    </keybind>
-    <!-- Keybind for Vol +\/ & Brightness +/- -->
+    <!-- Keybind for Vol +/- & Brightness +/- -->
     <keybind key="W-F5">
       <action name="Execute">
         <command>alsa-tray -10</command>
