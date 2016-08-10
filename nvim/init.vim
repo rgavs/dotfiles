@@ -13,8 +13,10 @@ endtry
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'conormcd/matchindent.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
@@ -35,9 +37,9 @@ let mapleader=" "
 map <F8> :TagbarToggle<CR>
 map <leader>\ :TagbarToggle<CR>
 map <leader>/ :NERDTreeToggle<CR>
-let g:colors_name = "badwolf"
-let g:badwolf_tabline = 2
-let g:javascript_plugin_jsdoc = 1
+let g:colors_name = 'badwolf'
+let g:badwolf_tabline=2
+let g:javascript_plugin_jsdoc=1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:NERDTreeCascadeOpenSingleChildDir=1
@@ -46,8 +48,12 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=2
 let g:NERDTreeShowHidden=1
 let g:NERDTreeWinSize=25
+let g:ycm_filetype_blacklist = {
+	\ 'tagbar': 1
+	\}
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_global_conf.py'
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_seed_identifiers_withsyntax=1
 autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
 
 " GENERAL
@@ -115,6 +121,7 @@ set sw=2		" shiftwidth: # spaces for autoindentation
 set ts=2		" tabstop: # visual length of <TAB> character
 set autoindent
 set smartindent
+set expandtab
 autocmd FileType html, javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
@@ -145,7 +152,6 @@ set laststatus=2
 
 " KEY MAPPINGS
 """"""""""""""""
-
 " <HOME> KEY
 imap <esc>OH <esc>0i
 cmap <esc>OH <home>
@@ -168,6 +174,9 @@ map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
+
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprevious<CR>
 
 " HELPER FUNCTIONS
 """""""""""""""""""
