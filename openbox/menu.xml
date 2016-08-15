@@ -24,16 +24,16 @@
 			<item label="IntelliJ IDEA"> <action name="Execute">
 				<execute>idea.sh</execute>
 			</action> </item>
+			<item label="texmaker"><action name="Execute">
+				<execute>texmaker</execute>
+			</action> </item>
 			<item label="Webstorm"> <action name="Execute">
 				<execute>webstorm</execute>
 			</action> </item>
 		</menu>
 		<menu id="2" label="Editors">
-			<item label="atom-beta"> <action name="Execute">
+			<item label="Atom-beta"> <action name="Execute">
 				<execute>atom-beta</execute>
-			</action> </item>
-			<item label="Nano"> <action name="Execute">
-				<execute>terminator -e nano</execute>
 			</action> </item>
 			<item label="nvim"> <action name="Execute">
 				<execute>terminator -e nvim</execute>
@@ -50,7 +50,7 @@
 				<execute>gimp</execute>
 			</action> </item>
 			<item label="Google Play Music Player"> <action name="Execute">
-					<execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
+					<execute> sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
 			</action> </item>
 			<item label="PulseAudio Volume Control"> <action name="Execute">
 				<execute>pavucontrol</execute>
@@ -111,6 +111,9 @@
 			<item label="baobab"> <action name="Execute">
 				<execute>baobab</execute>
 			</action> </item>
+			<item label="Info"> <action name="Execute">
+				<execute>terminator -e info</execute>
+			</action> </item>
 			<item label="pcmanfm"> <action name="Execute">
 				<execute>pcmanfm</execute>
 			</action> </item>
@@ -119,7 +122,10 @@
 			</action> </item>
 			<item label="terminator"> <action name="Execute">
 				<execute>terminator</execute>
-			</action></item>
+			</action> </item>
+			<item label="urxvt"> <action name="Execute">
+				<execute>urxvt</execute>
+			</action> </item>	
 		</menu>
 		<separator/>
 		<menu id="40" label="OpenBox">
