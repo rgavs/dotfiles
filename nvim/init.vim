@@ -6,27 +6,27 @@
 " PLUGIN
 """"""""""
 try
-	source '/home/ryan/.config/nvim/autoload/plug.vim'
+	source '~/.config/nvim/autoload/plug.vim'
 catch
 endtry
 
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'conormcd/matchindent.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
+"Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
+Plug 'zhaocai/dbext.vim'
 
 call plug#end()
 
@@ -34,12 +34,18 @@ call plug#end()
 let mapleader=" "
 
 "PLUGIN MAPS & OPTIONS
-map <F8> :TagbarToggle<CR>
-map <leader>\ :TagbarToggle<CR>
-map <leader>/ :NERDTreeToggle<CR>
-let g:colors_name = 'badwolf'
-let g:badwolf_tabline=2
-let g:javascript_plugin_jsdoc=1
+map 	<leader>\ :TagbarToggle<CR>
+map 	<leader>/ :NERDTreeToggle<CR>
+map 	<leader>e :vsp ~/.config/nvim/init.vim
+map 	<leader>qq q
+nmap 	r :redo<cr>
+let g:colors_name = "badwolf"
+let g:badwolf_tabline = 2
+let g:javascript_plugin_jsdoc = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:NERDTreeCascadeOpenSingleChildDir=1
@@ -48,12 +54,8 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeMouseMode=2
 let g:NERDTreeShowHidden=1
 let g:NERDTreeWinSize=25
-let g:ycm_filetype_blacklist = {
-	\ 'tagbar': 1
-	\}
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_global_conf.py'
-let g:ycm_confirm_extra_conf=0
-let g:ycm_seed_identifiers_withsyntax=1
+let g:ycm_confirm_extra_conf = 0
 autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
 
 " GENERAL
@@ -72,9 +74,11 @@ set lazyredraw
 set cmdheight=2
 set showcmd
 set splitright
+set splitbelow
+set number
 
 " Backspace works normally
-set backspace=eol,start,indent
+set backspace=2
 set whichwrap+=<,>,h,l
 
 " Search settings
@@ -117,19 +121,21 @@ set noswapfile
 " Tab/Indentation
 """"""""""""""""""
 " Tab size
-set sw=2		" shiftwidth: # spaces for autoindentation
-set ts=2		" tabstop: # visual length of <TAB> character
+set sw=4		" shiftwidth: # spaces for autoindentation
+set ts=4		" tabstop: # visual length of <TAB> character
+set sts=4		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS> 
 set autoindent
 set smartindent
-set expandtab
-autocmd FileType html, javascript :setlocal sw=2 ts=2 sts=2
-autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
+autocmd FileType html :setlocal sw=2 ts=2 sts=2
+autocmd FileType java :setlocal sw=2 ts=2 sts=2 expandtab
+autocmd FileType javascript :setlocal sw=2 ts=2 sts=2 expandtab
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
 
 " Command vars
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+set nowrap
 
 " MOVEMENT
 """""""""""
@@ -161,22 +167,10 @@ nmap <esc>OF $
 imap <esc>OF <esc>$a
 cmap <esc>OF <end>
 
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
 " Spell checking
 """""""""""""""""
 " Press ,ss -> toggle spell checking
 map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-
-map <leader>tn :tabnext<CR>
-map <leader>tp :tabprevious<CR>
 
 " HELPER FUNCTIONS
 """""""""""""""""""
