@@ -64,7 +64,7 @@
     </font>
     <font place="InactiveWindow">
       <name>Droid Sans</name>
-      <size>9</size>
+      <size>8</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -310,10 +310,9 @@
         <width>1720</width>
       </action>
     </keybind>
-    <!--Move to the Right/Left/Top/Bottom edge-->
     <keybind key="W-C-Left">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on left edge -->
+        <!-- put the window (whatever size) on left side -->
         <x>0</x>
       </action>
     </keybind>
@@ -328,19 +327,19 @@
     </keybind>
     <keybind key="W-C-Right">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on right edge -->
+        <!-- put the window (whatever size) on (top) left side -->
         <x>-0</x>
       </action>
     </keybind>
     <keybind key="W-C-Up">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on top edge -->
+        <!-- put the window (whatever size) on (top) left side -->
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-C-Down">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on bottom edge -->
+        <!-- put the window (whatever size) on (top) left side -->
         <y>-0</y>
       </action>
     </keybind>
@@ -484,7 +483,7 @@
     <keybind key="W-S-i">
       <action name="Iconify"/>
     </keybind>
-    <keybind key="W-m">
+   <keybind key="W-m">
       <action name="Move">
       </action>
     </keybind>
@@ -526,7 +525,7 @@
         <command>vlc</command>
       </action>
     </keybind>
-    <!-- Keybind for Vol +/- & Brightness +/- -->
+    <!-- Keybind for Vol +\/ & Brightness +/- -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>alsa-tray +10</command>
