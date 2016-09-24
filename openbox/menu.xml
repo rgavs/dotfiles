@@ -47,9 +47,6 @@
 			<item label="Texmaker"> <action name="Execute">
 				<execute>texmaker</execute>
 			</action> </item>
-			<item label="Visual Studio"> <action name="Execute">
-				<execute>visual-studio-code</execute>
-			</action> </item>
 			<item label="Webstorm"> <action name="Execute">
 				<execute>webstorm</execute>
 			</action> </item>
@@ -129,6 +126,9 @@
 			<item label="terminator"> <action name="Execute">
 				<execute>terminator</execute>
 			</action> </item>
+			<item label="virtualbox"><action name="Execute">
+				<execute>virtualbox</execute>
+			</action> </item>
 		</menu>
 		<separator/>
 		<menu id="40" label="OpenBox">
@@ -137,6 +137,9 @@
 				<execute>sh -c 'openbox --reconfigure --config-file /home/ryan/.config/openbox/rc.xml'</execute>
 			</action> </item>
 			<separator/>
+			<item label="Suspend"><action name="Execute">
+				<execute>systemctl hybrid-sleep</execute>
+			</action> </item>
 			<item label="Exit"> <action name="Exit"/> </item>
 		</menu>
 	</menu>

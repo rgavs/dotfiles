@@ -21,12 +21,13 @@ Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
+Plug 'zhaocai/dbext.vim'
 
 call plug#end()
 
@@ -72,6 +73,8 @@ set lazyredraw
 set cmdheight=2
 set showcmd
 set splitright
+set splitbelow
+set number		" Line numbering on left side
 
 " Backspace works normally
 set backspace=eol,start,indent
@@ -122,9 +125,11 @@ set ts=2		" tabstop: # visual length of <TAB> character
 set autoindent
 set smartindent
 set expandtab
-autocmd FileType html, javascript :setlocal sw=2 ts=2 sts=2
-autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
+autocmd FileType html :setlocal sw=2 ts=2 sts=2
+autocmd FileType java :setlocal sw=2 ts=2 sts=2 expandtab
+autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
 
 " Command vars
 set ai "Auto indent
@@ -152,31 +157,24 @@ set laststatus=2
 
 " KEY MAPPINGS
 """"""""""""""""
+map <leader>qq :q<CR>
+nmap r :redo<cr>
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprevious<CR>
+
 " <HOME> KEY
-imap <esc>OH <esc>0i
 cmap <esc>OH <home>
+imap <esc>OH <esc>0i
 nmap <esc>OH 0
 " <END> KEY
-nmap <esc>OF $
-imap <esc>OF <esc>$a
 cmap <esc>OF <end>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+imap <esc>OF <esc>$a
+nmap <esc>OF $
 
 " Spell checking
 """""""""""""""""
 " Press ,ss -> toggle spell checking
 map <leader>ss :setlocal spell!<cr>
-
-" Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-
-map <leader>tn :tabnext<CR>
-map <leader>tp :tabprevious<CR>
 
 " HELPER FUNCTIONS
 """""""""""""""""""

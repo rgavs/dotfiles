@@ -14,9 +14,9 @@ alsa-tray --card=hw:0 +tray &
 
 xset -b
 
-cd /home/ryan/.config/conky
+cd /home/ryan/.config/conky/
 conky -c conkyrc -q -d
+cd /home/ryan/
 
-cd /home/ryan
-
+urxvt &
 firefox-aurora &
