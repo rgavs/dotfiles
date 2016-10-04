@@ -1,14 +1,16 @@
 ! General
-!urxvt*termName:		rxvt-256color
-urxvt*scrollBar:		false
-urxvt*saveLines:		10000
-urxvt*cursorBlink:	true
-urxvt*urgentOnBell:	false
-
-!	color scheme
-urxvt*cursorColor:	#2ECC71
-urxvt*foreground:	#2ECC71
-urxvt.background:		#2E3436
+! urxvt*termName:			rxvt-256color
+urxvt*scrollBar:			false
+urxvt*saveLines:			10000
+urxvt*cursorBlink:			true
+urxvt*urgentOnBell:			false
+! Font config
+urxvt.font:					xft:"droid sans mono":size=10
+urxvt.geometry:				119x69
+! Color scheme
+urxvt*cursorColor:			#2ECC71
+urxvt*foreground:			#2ECC71
+urxvt*background:			#121212
 ! black | red | green
 urxvt*color0:				#2E3436
 urxvt*color1:				#CC0000
@@ -23,11 +25,24 @@ urxvt*color7:				#D3D7CF
 urxvt*color8:				#555753
 ! bright-red | bright-green | bright-yellow
 urxvt*color9:				#EF2929
-urxvt*color10:			#27AE60
-urxvt*color11:			#FCE94F
+urxvt*color10:				#27AE60
+urxvt*color11:				#FCE94F
 ! bright-blue | bright-purple | bright-cyan
-urxvt*color12:			#729FCF
-urxvt*color13:			#AD7FA8
-urxvt*color14:			#34E2E2
+urxvt*color12:				#729FCF
+urxvt*color13:				#AD7FA8
+urxvt*color14:				#34E2E2
 ! bright-white
-urxvt*color15:			#EEEEEC
+urxvt*color15:				#EEEEEC
+! Extensions etc
+urxvt.perl-ext-common:		default,clipboard-osc,selection-to-clipboard
+! Clipboard
+urxvt.clipboard.copycmd:	xclip -i -selection clipboard
+urxvt.clipboard.pastecmd:	xclip -o -selection clipboard
+urxvt.keysym.M-C-c:			perl:clipboard:copy
+urxvt.keysym.M-C-v:			perl:clipboard:paste
+! Url-select
+urxvt.url-select.autocopy:	true
+urxvt.url-select.button:	1
+urxvt.url-select.launcher:	/usr/bin/firefox-aurora
+urxvt.url-select.underline:	true
+

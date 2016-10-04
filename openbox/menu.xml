@@ -55,9 +55,7 @@
 			<item label="Google Play Music Player"> <action name="Execute">
 					<execute> sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
 			</action> </item>
-			<item label="parole"> <action name="Execute">
-				<execute>parole</execute>
-			</action> </item><item label="PulseAudio Volume Control"> <action name="Execute">
+			<item label="PulseAudio Volume Control"> <action name="Execute">
 				<execute>pavucontrol</execute>
 			</action> </item>
 			<item label="qpdfview"> <action name="Execute">
