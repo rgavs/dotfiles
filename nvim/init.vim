@@ -7,6 +7,7 @@
 """"""""""
 try
 	source '/home/ryan/.config/nvim/autoload/plug.vim'
+	set runtimepath+=/home/ryan/.vim/plug.vim
 catch
 endtry
 
@@ -21,7 +22,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'valloric/youcompleteme'
@@ -175,6 +176,10 @@ nmap <esc>OF $
 """""""""""""""""
 " Press ,ss -> toggle spell checking
 map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprevious<CR>
 
 " HELPER FUNCTIONS
 """""""""""""""""""
