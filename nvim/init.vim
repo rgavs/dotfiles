@@ -157,7 +157,8 @@ set noswapfile
 " Tab size
 set sw=2		" shiftwidth: # spaces for autoindentation
 set ts=2		" tabstop: # visual length of <TAB> character
-set sts=4		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
+=======
+set sts=2		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
 set autoindent
 set smartindent
 set expandtab

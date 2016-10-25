@@ -24,10 +24,8 @@ esac
 
 
 # EXPORTS
-export EDITOR="vim"
-export TERM="terminator"
-export VISUAL="nano"
-
+export EDITOR='vim'
+export VISUAL='vim'
 
 ## ALIASES
 # MISC
