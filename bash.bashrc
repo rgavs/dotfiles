@@ -24,10 +24,8 @@ esac
 
 
 # EXPORTS
-export EDITOR="vim"
-export TERM="terminator"
-export VISUAL="nano"
-
+export EDITOR='vim'
+export VISUAL='vim'
 
 ## ALIASES
 # MISC
@@ -36,7 +34,6 @@ alias ls='ls --color=always'
 alias la='ls -A'
 alias ll='ls -l'
 alias mkdir='mkdir -p'
-alias ...='../..'
 
 # APPS
 alias adb='/ext/android/sdk/platform-tools/adb'
