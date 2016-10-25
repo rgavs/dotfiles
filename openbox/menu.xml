@@ -7,35 +7,21 @@
 		<item label="firefox-aurora"> <action name="Execute">
 			<execute>firefox-aurora</execute>
 		</action> </item>
-		<item label="atom-beta"> <action name="Execute">
+		<item label="Atom"> <action name="Execute">
 				<execute>atom-beta</execute>
 			</action> </item>
-		<item label="terminator"> <action name="Execute">
-				<execute>terminator</execute>
+		<item label="urxvt"> <action name="Execute">
+				<execute>urxvt</execute>
 		</action> </item>
 		<separator/>
-		<menu id="1" label="IDEs">
-			<item label="Android Studio"> <action name="Execute">
-				<execute>sh /home/ryan/android-studio/bin/studio.sh</execute>
-			</action> </item>
-			<item label="Clion"> <action name="Execute">
-				<execute>clion</execute>
-			</action> </item>
-			<item label="datagrip"><action name="Execute">
-				<execute>datagrip</execute>
-			</action> </item>
-			<item label="IntelliJ IDEA"> <action name="Execute">
-				<execute>idea.sh</execute>
-			</action> </item>
-			<item label="Webstorm"> <action name="Execute">
-				<execute>webstorm</execute>
-			</action> </item>
-		</menu>
 		<menu id="2" label="Editors">
-			<item label="Atom-beta"> <action name="Execute">
+			<item label="Atom"><action name="Execute">
 				<execute>atom-beta</execute>
+			</action></item>
+			<item label="Nano"> <action name="Execute">
+				<execute>terminator -e nano</execute>
 			</action> </item>
-			<item label="nvim"> <action name="Execute">
+			<item label="Nvim"> <action name="Execute">
 				<execute>terminator -e nvim</execute>
 			</action> </item>
 			<item label="SublimeText"> <action name="Execute">
@@ -45,15 +31,35 @@
 				<execute>terminator -e vim</execute>
 			</action> </item>
 		</menu>
+		<menu id="1" label="IDEs">
+			<item label="Android Studio"> <action name="Execute">
+				<execute>sh /ext/android-studio/bin/studio.sh</execute>
+			</action> </item>
+			<item label="Clion"> <action name="Execute">
+				<execute>clion</execute>
+			</action> </item>
+			<item label="Eclipse"> <action name="Execute">
+				<execute>eclipse</execute>
+			</action> </item>
+			<item label="Idea Intellij"> <action name="Execute">
+				<execute>idea.sh</execute>
+			</action> </item>
+			<item label="Texmaker"> <action name="Execute">
+				<execute>texmaker</execute>
+			</action> </item>
+			<item label="Webstorm"> <action name="Execute">
+				<execute>webstorm</execute>
+			</action> </item>
+		</menu>
 		<menu id="5" label="Multimedia">
-			<item label="blender"> <action name="Execute">
+			<item label="Blender"> <action name="Execute">
 				<execute>blender</execute>
 			</action> </item>
 			<item label="GIMP"> <action name="Execute">
 				<execute>gimp</execute>
 			</action> </item>
 			<item label="Google Play Music Player"> <action name="Execute">
-					<execute> sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
+				<execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
 			</action> </item>
 			<item label="PulseAudio Volume Control"> <action name="Execute">
 				<execute>pavucontrol</execute>
@@ -61,7 +67,7 @@
 			<item label="qpdfview"> <action name="Execute">
 				<execute>qpdfview</execute>
 			</action> </item>
-			<item label="vlc"> <action name="Execute">
+			<item label="VLC"> <action name="Execute">
 				<execute>vlc</execute>
 			</action> </item>
 		</menu>
@@ -71,6 +77,9 @@
 			</action> </item>
 			<item label="firefox-aurora"> <action name="Execute">
 				<execute>firefox-aurora</execute>
+			</action> </item>
+			<item label="Steam"> <action name="Execute">
+				<execute>sh -c "STEAM_RUNTIME=1 steam"</execute>
 			</action> </item>
 			<item label="Vuze"> <action name="Execute">
 				<execute>vuze</execute>
@@ -88,14 +97,17 @@
 			</action> </item>
 		</menu>
 		<menu id="37" label="System">
-			<item label="Disk Usage Analyzer (baobab)"> <action name="Execute">
-				<execute>baobab</execute>
+			<item label="NVIDIA X Server Settings"> <action name="Execute">
+				<execute>nvidia-settings</execute>
 			</action> </item>
-			<item label="htop"> <action name="Execute">
-				<execute>terminator -e htop</execute>
+			<item label="Openbox Configuration Manager"> <action name="Execute">
+				<execute>obconf</execute>
 			</action> </item>
 			<item label="lxappearance"> <action name="Execute">
 				<execute>lxappearance</execute>
+			</action> </item>
+			<item label="Window Effects"> <action name="Execute">
+				<execute>compton-conf</execute>
 			</action> </item>
 		</menu>
 		<menu id="38" label="Utilities">
@@ -108,21 +120,27 @@
 			<item label="ranger"> <action name="Execute">
 				<execute>terminator -e ranger</execute>
 			</action> </item>
+			<item label="urxvt"> <action name="Execute">
+				<execute>urxvt</execute>
+			</action> </item>
 			<item label="terminator"> <action name="Execute">
 				<execute>terminator</execute>
 			</action> </item>
-			<item label="urxvt"> <action name="Execute">
-				<execute>urxvt</execute>
+			<item label="virtualbox"><action name="Execute">
+				<execute>virtualbox</execute>
 			</action> </item>
 		</menu>
 		<separator/>
 		<menu id="40" label="OpenBox">
 			<menu id="client-list-menu"/>
-			<item label="Reconfigure"> <action name="Reconfigure"/> </item>
+			<item label="Reconfigure"> <action name="Execute">
+				<execute>sh -c 'openbox --reconfigure --config-file /home/ryan/.config/openbox/rc.xml'</execute>
+			</action> </item>
 			<separator/>
-			<item label="Suspend"> <action name="Execute">
+			<item label="Suspend"><action name="Execute">
 				<execute>systemctl hybrid-sleep</execute>
-			</action> </item><item label="Exit"> <action name="Exit"/> </item>
+			</action> </item>
+			<item label="Exit"> <action name="Exit"/> </item>
 		</menu>
 	</menu>
 </openbox_menu>

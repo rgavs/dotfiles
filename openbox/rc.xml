@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -65,9 +65,9 @@
     </font>
     <font place="InactiveWindow">
       <name>Droid Sans</name>
-      <size>8</size>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -94,7 +94,7 @@
       <name>Droid Sans</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -103,7 +103,7 @@
       <name>Droid Sans</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -302,19 +302,29 @@
         <width>1/2</width>
       </action>
     </keybind>
-    <keybind key="W-C-Left">
+    <keybind key="W-S-Right">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on left side -->
-        <x>0</x>
+        <!-- Nearly full screen | left side -->
+        <x>-0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>1720</width>
       </action>
     </keybind>
     <keybind key="W-S-Left">
       <action name="MoveResizeTo">
-        <!-- put large window on left side -->
+        <!-- Nearly full screen | right side -->
         <x>0</x>
         <y>0</y>
         <height>100%</height>
         <width>1720</width>
+      </action>
+    </keybind>
+    <!--Move to the Right/Left/Top/Bottom edge-->
+    <keybind key="W-C-Left">
+      <action name="MoveResizeTo">
+        <!-- put the window (whatever size) on left edge -->
+        <x>0</x>
       </action>
     </keybind>
     <keybind key="W-Right">
@@ -328,37 +338,28 @@
     </keybind>
     <keybind key="W-C-Right">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on (top) left side -->
+        <!-- put the window (whatever size) on right edge -->
         <x>-0</x>
-      </action>
-    </keybind>
-    <keybind key="W-S-Right">
-      <action name="MoveResizeTo">
-        <!-- put large window on right side -->
-        <x>-0</x>
-        <y>0</y>
-        <height>100%</height>
-        <width>1720</width>
       </action>
     </keybind>
     <keybind key="W-C-Up">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on (top) left side -->
+        <!-- put the window (whatever size) on top edge -->
         <y>0</y>
       </action>
     </keybind>
     <keybind key="W-C-Down">
       <action name="MoveResizeTo">
-        <!-- put the window (whatever size) on (top) left side -->
+        <!-- put the window (whatever size) on bottom edge -->
         <y>-0</y>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="ToggleAlwaysOnTop">
       </action>
     </keybind>
     <keybind key="W-Up">
       <action name="ToggleFullscreen">
+      </action>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="ToggleAlwaysOnTop">
       </action>
     </keybind>
     <keybind key="W-Down">
@@ -463,17 +464,12 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
-    <keybind key="W-a">
-      <action name="Execute">
-        <command>atom-beta</command>
-      </action>
-    </keybind>
-    <keybind key="W-b">
-      <action name="Execute">
-        <command>baobab</command>
-      </action>
-    </keybind>
+  <!-- Keybindings for running applications -->
+  <keybind key="W-a">
+    <action name="Execute">
+      <command>atom</command>
+    </action>
+  </keybind>
     <keybind key="W-c">
       <action name="Execute">
         <command>chromium</command>
@@ -491,7 +487,7 @@
     </keybind>
     <keybind key="W-g">
       <action name="Execute">
-        <command>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~;'</command>
+        <execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
       </action>
     </keybind>
     <keybind key="W-i">
@@ -530,6 +526,11 @@
         <command>subl3</command>
       </action>
     </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>sh -c "STEAM_RUNTIME=1 steam"</command>
+      </action>
+    </keybind>
     <keybind key="W-t">
       <action name="Execute">
         <command>terminator</command>
@@ -549,30 +550,20 @@
         <command>vlc</command>
       </action>
     </keybind>
-    <!-- Keybind for Vol +\/ & Brightness +/- -->
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>alsa-tray +10</command>
-      </action>
-    </keybind>
+    <!-- Keybind for Vol +/- & Brightness +/- -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
         <command>alsa-tray -10</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute">
+        <command>alsa-tray +10</command>
+      </action>
+    </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
         <command>alsa-tray mute</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>xbacklight -inc 10</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute">
-        <command>xbacklight -dec 10</command>
       </action>
     </keybind>
     <!-- Keybind for extra keys- HOME/SLEEP... -->
@@ -581,9 +572,14 @@
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="XF86Sleep">
+    <keybind key="W-Escape">
       <action name="Execute">
         <command>systemctl hybrid-sleep</command>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>scrot -e 'mv $f /home/ryan/Pictures/'</command>
       </action>
     </keybind>
   </keyboard>
@@ -881,12 +877,7 @@
       </mousebind>
     </context>
     <context name="Root">
-      <!-- Menus -->
-      <mousebind button="Middle" action="Press">
-        <action name="ShowMenu">
-          <menu>client-list-combined-menu</menu>
-        </action>
-      </mousebind>
+      <!-- Right-Click Menu -->
       <mousebind button="Right" action="Press">
         <action name="ShowMenu">
           <menu>root-menu</menu>
