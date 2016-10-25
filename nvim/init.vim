@@ -123,7 +123,7 @@ set noswapfile
 " Tab size
 set sw=4		" shiftwidth: # spaces for autoindentation
 set ts=4		" tabstop: # visual length of <TAB> character
-set sts=4		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS> 
+set sts=4		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
 set autoindent
 set smartindent
 autocmd FileType c :setlocal sw=2 ts=2 sts=2 expandtab
