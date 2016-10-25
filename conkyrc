@@ -40,9 +40,9 @@ Kernel:$alignr$kernel
 Uptime:$alignr$uptime
 RAM:$alignr$memperc% / $mem
 Swap usage:$alignr$swap/$swapmax
-#${color #d1d1d1}NETWORK $hr${color}
+${color #d1d1d1}NETWORK $hr${color}
 #Gateway:$alignr$gw_ip
-#Local IP: $alignr ${addr wlan0}
+Local IP: $alignr ${addr wlp4s0}
 #External IP: $alignr ${exec curl ifconfig.me}
 #SSID: $alignr ${wireless_essid wlan0}
 #eth0 MAC:$alignr${exec ifconfig -a | grep HWaddr | grep eth0 | cut -c 39-55}

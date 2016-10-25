@@ -36,11 +36,6 @@ alias ls='ls --color=always'
 alias la='ls -A'
 alias ll='ls -l'
 alias mkdir='mkdir -p'
-alias ...='../..'
 
 # APPS
-alias adb='/ext/android/sdk/platform-tools/adb'
-alias fastboot='/ext/android/sdk/platform-tools/fastboot'
 alias idea='idea.sh'
-alias nvim='/usr/local/bin/nvim'
-alias studio='/ext/android-studio/bin/studio.sh'
