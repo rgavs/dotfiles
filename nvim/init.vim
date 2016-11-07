@@ -13,12 +13,12 @@ endtry
 
 " FOR VIM
 if !has('nvim')			" these are defaults for nvim
-  set autoread
+  set autoread      " but need to be set for vim
   set backspace=2
   set hlsearch
   set incsearch
   set laststatus=2	" Always show status line
-  set mouse=a			" Enable mouse movement
+  set mouse=a			  " Enable mouse movement
   set nocompatible
   set ttymouse=xterm2
   set wildmenu	" Autocomplete menu
@@ -27,22 +27,22 @@ endif
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
-"Plug 'chrisbra/colorizer'
 Plug 'junegunn/vim-easy-align'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'pangloss/vim-javascript'
-Plug 'raimondi/delimitmate'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'scrooloose/syntastic'
+Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 "Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
-Plug 'zhaocai/dbext.vim'
+Plug 'zhaocai/dbext.vim', { 'for': 'sql' }
 
 call plug#end()
 
@@ -52,9 +52,9 @@ let mapleader=" "
 "PLUGIN MAPS & OPTIONS
 map 	<leader>\	:TagbarToggle<CR>
 map 	<leader>/	:NERDTreeToggle<CR>
-map		<leader>cc	<Plug>NERDCommenterInvert
+map		<leader>cc	<plug>NERDCommenterToggle
 map		<leader>e	:e<CR>	" reload file
-map 	<leader>es	:vsp ~/.config/nvim/init.vim<CR>	" ~ 'edit source'
+map 	<leader>es	:vsp ~/.config/nvim/init.vim<CR> " ~ 'edit source'
 map 	<leader>qq	:q<CR>	" quit
 map		<leader>rr	:source ~/.config/nvim/init.vim<CR>
 map		<leader>tn	:tabnext<CR>
@@ -62,7 +62,7 @@ map		<leader>tp	:tabprevious<CR>
 map		<C-w>w :w<CR>
 map		<leader>. zf  " Fold create
 map		<leader>, zA  " Fold toggle (all under cursor)
-map   + :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
+map   <leader>+ :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
 nmap 	r :redo<CR>
 let g:colors_name = "badwolf"
 let g:badwolf_tabline = 2
@@ -73,12 +73,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:NERDTreeCascadeOpenSingleChildDir=1
-let g:NERDTreeHighlightCursorline=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeMouseMode=2
-let g:NERDTreeShowHidden=1
-let g:NERDTreeWinSize=25
+let g:NERDTreeCascadeOpenSingleChildDir = 1
+let g:NERDTreeHighlightCursorline = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeWinSize = 25
+let g:tagbar_width = 30
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_filetype_blacklist = {
   \ 'tagbar': 1
@@ -157,7 +158,6 @@ set noswapfile
 " Tab size
 set sw=2		" shiftwidth: # spaces for autoindentation
 set ts=2		" tabstop: # visual length of <TAB> character
-=======
 set sts=2		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
 set autoindent
 set smartindent
@@ -233,4 +233,13 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+" Is buffer empty
+function! IsEmpty()
+  if (expand('%:p' == '')
+    if (line('$') == 1 && getline(1) == '')
+      return 1
+    endif
+  endif
+endfunction
 
