@@ -27,7 +27,8 @@ endif
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
-"Plug 'bronson/vim-trailing-whitespace'
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+"Plug 'chrisbra/colorizer'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
@@ -42,7 +43,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
-Plug 'zhaocai/dbext.vim'
+Plug 'zhaocai/dbext.vim',  { 'for': 'sql' }
 
 call plug#end()
 
@@ -86,10 +87,15 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_global_conf.py'
 let g:ycm_seed_identifiers_withsyntax=1
 autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " GENERAL
 """"""""""
 set autoread
+
+" Global
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Filetype plugins
 filetype plugin on
@@ -153,7 +159,7 @@ set noswapfile
 " Tab size
 set sw=2		" shiftwidth: # spaces for autoindentation
 set ts=2		" tabstop: # visual length of <TAB> character
-set sts=4		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
+set sts=2		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
 set autoindent
 set smartindent
 set expandtab
