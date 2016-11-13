@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"debug": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"ColorPicker",
+		"ESLint",
+		"Git",
+		"Javascript Beautify",
+		"Javatar",
+		"Markdown Preview",
+		"Package Control",
+		"Project Manager",
+		"RegReplace",
+		"Seti_UI",
+		"Seti_UX",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"Uncrustify"
+	]
+}

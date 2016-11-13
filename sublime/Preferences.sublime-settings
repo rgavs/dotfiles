@@ -1,0 +1,44 @@
+{
+	"atomic_save": true,
+	"close_windows_when_empty": false,
+	"color_scheme": "Packages/Seti_UX/Seti.tmTheme",
+	"copy_with_empty_selection": false,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.out",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
+	"font_face": "Droid Sans mono",
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"margin": 2,
+	"scroll_past_end": false,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"theme": "Seti.sublime-theme",
+	"trim_trailing_white_space_on_save": true
+}
