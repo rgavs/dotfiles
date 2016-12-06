@@ -7,8 +7,8 @@
     <item label="firefox-aurora"> <action name="Execute">
         <execute>firefox-aurora</execute>
     </action> </item>
-    <item label="Atom"> <action name="Execute">
-        <execute>atom-beta</execute>
+    <item label="atom"> <action name="Execute">
+        <execute>/opt/atom/atom</execute>
     </action> </item>
     <item label="urxvt"> <action name="Execute">
         <execute>urxvt</execute>
@@ -16,7 +16,7 @@
     <separator/>
     <menu id="2" label="Editors">
       <item label="Atom"><action name="Execute">
-          <execute>atom-beta</execute>
+          <execute>/opt/atom/atom</execute>
       </action></item>
       <item label="Nano"> <action name="Execute">
           <execute>terminator -e nano</execute>

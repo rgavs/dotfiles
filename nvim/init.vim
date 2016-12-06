@@ -13,40 +13,39 @@ endtry
 
 " FOR VIM
 if !has('nvim')			" these are defaults for nvim
-  set autoread      " but need to be set for vim
+  set autoread
   set backspace=2
   set hlsearch
   set incsearch
   set laststatus=2	" Always show status line
-  set mouse=a			  " Enable mouse movement
+  set mouse=a			" Enable mouse movement
   set nocompatible
   set ttymouse=xterm2
-  set wildmenu	    " Autocomplete menu
+  set wildmenu	" Autocomplete menu
 endif
 
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 "Plug 'chrisbra/colorizer'
-Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'lervag/vimtex', { 'for': 'latex' }
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'scrooloose/syntastic'
-Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 "Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
-Plug 'zhaocai/dbext.vim', { 'for': 'sql' }
+Plug 'zhaocai/dbext.vim',  { 'for': 'sql' }
 
 call plug#end()
 
@@ -66,11 +65,10 @@ map		<leader>tp	:tabprevious<CR>
 map		<C-w>w :w<CR>
 map		<leader>. zf  " Fold create
 map		<leader>, zA  " Fold toggle (all under cursor)
-map   <leader>+ :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
+map   + :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
 nmap 	r :redo<CR>
-let g:colors_name = 'badwolf'
+let g:colors_name = "badwolf"
 let g:badwolf_tabline = 2
-let g:EclimCompletionMethod = 'omnifunc'
 let g:javascript_plugin_jsdoc = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -78,13 +76,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:NERDTreeCascadeOpenSingleChildDir = 1
-let g:NERDTreeHighlightCursorline = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeWinSize = 25
-let g:tagbar_width = 30
+let g:NERDTreeCascadeOpenSingleChildDir=1
+let g:NERDTreeHighlightCursorline=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeMouseMode=2
+let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=25
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_filetype_blacklist = {
   \ 'tagbar': 1
