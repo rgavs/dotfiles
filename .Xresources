@@ -35,8 +35,9 @@ urxvt*color14:			#34E2E2
 ! bright-white
 urxvt*color15:			#EEEEEC
 ! Extensions etc
-urxvt.perl-ext-common:  clipboard,clipboard-osc,selection-to-clipboard
-urxvt.url-launcher:     "firefox-aurora"
+urxvt.iso14755:     false
+urxvt.perl-ext-common:      default,clipboard,url-select,selection-to-clipboard
+urxvt.url-launcher:         /usr/bin/firefox-aurora
 ! Clipboard
 urxvt.clipboard.copycmd:	  xclip -i -selection clipboard
 urxvt.clipboard.pastecmd:	  xclip -o -selection clipboard
@@ -50,3 +51,4 @@ urxvt.url-select.underline:	true
 ! Fix special keys
 !urxvt.keysym.F1:    "\E[11~"
 !urxvt.keysym.F2:    "\E[12~"
+

@@ -1,0 +1,19 @@
+[user]
+  email = gavigan.ryan@gmail.com
+  name = KUDU
+[core]
+  editor = nvim
+[github]
+  user = rgavs
+[color]
+  ui = auto
+[alias]
+  aa = add --all
+  br = branch
+  ca = commit -a
+  cam = commit -am
+  co = checkout
+  di = diff
+  last = log -1
+  p = pull
+  st = status --branch
