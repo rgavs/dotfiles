@@ -7,8 +7,8 @@
     <item label="firefox-aurora"> <action name="Execute">
         <execute>firefox-aurora</execute>
     </action> </item>
-    <item label="atom-beta"> <action name="Execute">
-        <execute>atom-beta</execute>
+    <item label="atom"> <action name="Execute">
+        <execute>/opt/atom/atom</execute>
     </action> </item>
     <item label="urxvt"> <action name="Execute">
         <execute>urxvt</execute>
@@ -29,8 +29,8 @@
       </action> </item>
     </menu>
     <menu id="2" label="Editors">
-      <item label="atom-beta"> <action name="Execute">
-          <execute>atom-beta</execute>
+      <item label="atom"> <action name="Execute">
+          <execute>/opt/atom/atom</execute>
       </action> </item>
       <item label="nvim"> <action name="Execute">
           <execute>urxvt -e nvim</execute>

@@ -16,9 +16,5 @@ cd /home/ryan/.config/conky
 conky -c ./conkyrc -d &
 cd /home/ryan/
 
-<<<<<<< Updated upstream
-terminator &
-=======
 urxvt &
->>>>>>> Stashed changes
 firefox-aurora -silent &

@@ -21,17 +21,23 @@ if !has('nvim')			" these are defaults for nvim
   set mouse=a			  " Enable mouse movement
   set nocompatible
   set ttymouse=xterm2
-  set wildmenu	" Autocomplete menu
+  set wildmenu	    " Autocomplete menu
 endif
 
 " LOAD PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
+"Plug 'chrisbra/colorizer'
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle' }
+Plug 'lervag/vimtex', { 'for': 'latex' }
+Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'raimondi/delimitmate'
+Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'scrooloose/syntastic'
@@ -48,24 +54,26 @@ call plug#end()
 
 " Map leader <- <Leader>
 let mapleader=" "
+set runtimepath+=/usr/share/vim/vimfiles/
 
 "PLUGIN MAPS & OPTIONS
-map 	<leader>\	:TagbarToggle<CR>
-map 	<leader>/	:NERDTreeToggle<CR>
-map		<leader>cc	<plug>NERDCommenterToggle
-map		<leader>e	:e<CR>	" reload file
-map 	<leader>es	:vsp ~/.config/nvim/init.vim<CR> " ~ 'edit source'
-map 	<leader>qq	:q<CR>	" quit
-map		<leader>rr	:source ~/.config/nvim/init.vim<CR>
-map		<leader>tn	:tabnext<CR>
-map		<leader>tp	:tabprevious<CR>
-map		<C-w>w :w<CR>
-map		<leader>. zf  " Fold create
-map		<leader>, zA  " Fold toggle (all under cursor)
+map   <leader>\	:TagbarToggle<CR>
+map   <leader>/	:NERDTreeToggle<CR>
+map   <leader>cc	<Plug>NERDCommenterToggle
+map   <leader>e	:e<CR>	" reload file
+map   <leader>es	:vsp ~/.config/nvim/init.vim<CR> " ~ 'edit source'
+map   <leader>qq	:q<CR>	" quit
+map   <leader>rr	:source ~/.config/nvim/init.vim<CR>
+map   <leader>tn	:tabnext<CR>
+map   <leader>tp	:tabprevious<CR>
+map   <C-w>w :w<CR>
+map   <leader>. zf  " Fold create
+map   <leader>, zA  " Fold toggle (all under cursor)
 map   <leader>+ :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
 nmap 	r :redo<CR>
-let g:colors_name = "badwolf"
+let g:colors_name = 'badwolf'
 let g:badwolf_tabline = 2
+let g:better_whitespace_filetypes_blacklist = ['markdown']
 let g:javascript_plugin_jsdoc = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -87,6 +95,7 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_global_conf.py'
 let g:ycm_seed_identifiers_withsyntax=1
 autocmd FileType c nnoremap <buffer> <silent> <C-]> :YcmCompleter GoTo<cr>
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " GENERAL
 """"""""""

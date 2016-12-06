@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
@@ -66,7 +67,7 @@
       <name>Droid Sans</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -93,7 +94,7 @@
       <name>Droid Sans</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -102,7 +103,7 @@
       <name>Droid Sans</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -301,19 +302,19 @@
         <width>1/2</width>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
-      <action name="MoveResizeTo">
-        <!-- put the window on left side -->
-        <x>0</x>
-        <y>0</y>
-        <height>100%</height>
-        <width>1720</width>
-      </action>
-    </keybind>
     <keybind key="W-C-Left">
       <action name="MoveResizeTo">
         <!-- put the window (whatever size) on left side -->
         <x>0</x>
+      </action>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="MoveResizeTo">
+        <!-- put large window on left side -->
+        <x>0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>1720</width>
       </action>
     </keybind>
     <keybind key="W-Right">
@@ -331,6 +332,15 @@
         <x>-0</x>
       </action>
     </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveResizeTo">
+        <!-- put large window on right side -->
+        <x>-0</x>
+        <y>0</y>
+        <height>100%</height>
+        <width>1720</width>
+      </action>
+    </keybind>
     <keybind key="W-C-Up">
       <action name="MoveResizeTo">
         <!-- put the window (whatever size) on (top) left side -->
@@ -343,8 +353,12 @@
         <y>-0</y>
       </action>
     </keybind>
+    <keybind key="W-S-Up">
+      <action name="ToggleAlwaysOnTop">
+      </action>
+    </keybind>
     <keybind key="W-Up">
-      <action name="ToggleMaximizeFull">
+      <action name="ToggleFullscreen">
       </action>
     </keybind>
     <keybind key="W-Down">
@@ -452,7 +466,12 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-a">
       <action name="Execute">
-        <command>atom-beta</command>
+        <command>/opt/atom/atom</command>
+      </action>
+    </keybind>
+    <keybind key="W-b">
+      <action name="Execute">
+        <command>baobab</command>
       </action>
     </keybind>
     <keybind key="W-c">
@@ -483,13 +502,18 @@
     <keybind key="W-S-i">
       <action name="Iconify"/>
     </keybind>
-   <keybind key="W-m">
+    <keybind key="W-m">
       <action name="Move">
       </action>
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
         <command>pcmanfm</command>
+      </action>
+    </keybind>
+    <keybind key="W-q">
+      <action name="Execute">
+        <command>qpdfview</command>
       </action>
     </keybind>
     <keybind key="W-r">
@@ -858,11 +882,6 @@
     </context>
     <context name="Root">
       <!-- Menus -->
-      <mousebind button="Middle" action="Press">
-        <action name="ShowMenu">
-          <menu>client-list-combined-menu</menu>
-        </action>
-      </mousebind>
       <mousebind button="Right" action="Press">
         <action name="ShowMenu">
           <menu>root-menu</menu>
