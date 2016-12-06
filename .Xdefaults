@@ -34,15 +34,15 @@ urxvt*color14:      #34E2E2
 urxvt*color15:      #EEEEEC
 ! Extensions etc
 urxvt.iso14755:     false
-urxvt.url-launcher:     "firefox-aurora"
-urxvt.perl-ext-common:  default,clipboard,selection-to-clipboard,url-select
+urxvt.url-launcher:         "firefox-aurora"
+urxvt.perl-ext-common:      default,clipboard,selection-to-clipboard,url-select
 ! Clipboard
-urxvt.clipboard.copycmd:	xclip -i
+urxvt.clipboard.copycmd:	  xclip -i
 ! -selection clipboard
-urxvt.clipboard.pastecmd:	xclip -o
+urxvt.clipboard.pastecmd:	  xclip -o
 ! -selection clipboard
-urxvt.keysym.C-S-c:			perl:clipboard:copy
-urxvt.keysym.C-S-v:			perl:clipboard:paste
+urxvt.keysym.C-S-c:			    perl:clipboard:copy
+urxvt.keysym.C-S-v:			    perl:clipboard:paste
 ! Url-select
 urxvt.url-select.autocopy:	true
 urxvt.url-select.button:	  1
