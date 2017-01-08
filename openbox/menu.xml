@@ -15,19 +15,19 @@
     </action> </item>
     <separator/>
     <menu id="2" label="Editors">
-      <item label="Atom"><action name="Execute">
+      <item label="atom"><action name="Execute">
           <execute>/opt/atom/atom</execute>
       </action></item>
-      <item label="Nano"> <action name="Execute">
-          <execute>terminator -e nano</execute>
-      </action> </item>
-      <item label="Nvim"> <action name="Execute">
+      <item label="atom-beta"><action name="Execute">
+          <execute>/opt/atom-beta/atom</execute>
+      </action></item>
+      <item label="nvim"> <action name="Execute">
           <execute>terminator -e nvim</execute>
       </action> </item>
       <item label="SublimeText"> <action name="Execute">
           <execute>subl3</execute>
       </action> </item>
-      <item label="Vim"> <action name="Execute">
+      <item label="vim"> <action name="Execute">
           <execute>terminator -e vim</execute>
       </action> </item>
     </menu>
@@ -83,6 +83,9 @@
       </action> </item>
       <item label="Steam"> <action name="Execute">
           <execute>sh -c "STEAM_RUNTIME=1 steam"</execute>
+      </action> </item>
+      <item label="Vivaldi"> <action name="Execute">
+          <execute>vivaldi-stable</execute>
       </action> </item>
       <item label="Vuze"> <action name="Execute">
           <execute>vuze</execute>

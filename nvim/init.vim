@@ -32,6 +32,7 @@ Plug 'airblade/vim-rooter'
 Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 "Plug 'chrisbra/colorizer'
 Plug 'junegunn/vim-easy-align'
+"Plug 'junegunn/gv.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -53,20 +54,20 @@ call plug#end()
 let mapleader=" "
 
 "PLUGIN MAPS & OPTIONS
-map 	<leader>\	:TagbarToggle<CR>
-map 	<leader>/	:NERDTreeToggle<CR>
-map		<leader>cc	<Plug>NERDCommenterInvert
-map		<leader>e	:e<CR>	" reload file
-map 	<leader>es	:vsp ~/.config/nvim/init.vim<CR>	" ~ 'edit source'
-map 	<leader>qq	:q<CR>	" quit
-map		<leader>rr	:source ~/.config/nvim/init.vim<CR>
-map		<leader>tn	:tabnext<CR>
-map		<leader>tp	:tabprevious<CR>
-map		<C-w>w :w<CR>
-map		<leader>. zf  " Fold create
-map		<leader>, zA  " Fold toggle (all under cursor)
+map   <leader>\	:TagbarToggle<CR>
+map   <leader>/	:NERDTreeToggle<CR>
+map   <leader>cc	<Plug>NERDCommenterInvert
+map   <leader>e	:e<CR>	" reload file
+map   <leader>es	:vsp ~/.config/nvim/init.vim<CR>	" ~ 'edit source'
+map   <leader>qq	:q<CR>	" quit
+map   <leader>rr	:source ~/.config/nvim/init.vim<CR>
+map   <leader>tn	:tabnext<CR>
+map   <leader>tp	:tabprevious<CR>
+map   <C-w>w :w<CR>
+map   <leader>. zf  " Fold create
+map   <leader>, zA  " Fold toggle (all under cursor)
 map   + :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
-nmap 	r :redo<CR>
+nmap  r :redo<CR>
 let g:colors_name = "badwolf"
 let g:badwolf_tabline = 2
 let g:javascript_plugin_jsdoc = 1
@@ -165,16 +166,7 @@ set sts=2		" softtabstop: # spaces a <TAB> counts for w/<TAB> & <BS>
 set autoindent
 set smartindent
 set expandtab
-autocmd FileType c :setlocal sw=2 ts=2 sts=2
-autocmd FileType html :setlocal sw=2 ts=2 sts=2
-autocmd FileType java :setlocal sw=2 ts=2 sts=2
-autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
-
-" Command vars
-set ai "Auto indent
-set si "Smart indent
-set nowrap
 
 " MOVEMENT
 """""""""""

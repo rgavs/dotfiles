@@ -6,8 +6,7 @@
   </resistance>
   <focus>
     <focusNew>yes</focusNew>
-    <!-- always try to focus new windows when they appear. other rules do
-       apply -->
+    <!-- always try to focus new windows when they appear. other rules apply -->
     <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
@@ -33,11 +32,9 @@
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
     <primaryMonitor>Active</primaryMonitor>
-    <!-- The monitor where Openbox should place popup dialogs such as the
-       focus cycling popup, or the desktop switch popup.  It can be an index
-       from 1, specifying a particular monitor.  Or it can be one of the
-       following: 'Mouse' - where the mouse is, or
-                  'Active' - where the active window is -->
+    <!-- Monitor where Openbox should place popup dialogs
+         It can be an index from 1, specifying a particular monitor. Or it can be one of the
+       following: 'Mouse' - where the mouse is, or 'Active' - where the active window is -->
   </placement>
   <theme>
     <name>Numix</name>
@@ -226,7 +223,7 @@
       </action>
     </keybind>
 
-    <!-- Go to desktop X -->
+    <!-- Go to desktop -->
     <keybind key="W-F1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -515,6 +512,11 @@
         <command>/opt/atom/atom</command>
       </action>
     </keybind>
+    <keybind key="W-S-a">
+      <action name="Execute">
+        <command>/opt/atom-beta/atom</command>
+      </action>
+    </keybind>
     <keybind key="W-c">
       <action name="Execute">
         <command>chromium</command>
@@ -550,6 +552,11 @@
     <keybind key="W-p">
       <action name="Execute">
         <command>pcmanfm</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-p">
+      <action name="Execute">
+        <command>pavucontrol</command>
       </action>
     </keybind>
     <keybind key="W-q">
@@ -595,6 +602,11 @@
         <command>vlc</command>
       </action>
     </keybind>
+    <keybind key="W-S-v">
+      <action name="Execute">
+        <command>vivaldi-stable</command>
+      </action>
+    </keybind>
     <!-- Keybind for Vol +/- & Brightness +/- -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
@@ -624,7 +636,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -e 'mv $f /home/ryan/Pictures/'</command>
+        <command>scrot -e 'mv $f /home/ryan/Pictures/Screenshots/'</command>
       </action>
     </keybind>
   </keyboard>

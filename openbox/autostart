@@ -5,7 +5,7 @@
 obsetlayout 0 2 2 0
 
 # background (wallpaper) image
-/home/ryan/.fehbg
+/home/ryan/.config/fehbg
 
 # drawer/panel
 tint2 -c /home/ryan/.config/tint2/tint2rc &
