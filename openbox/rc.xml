@@ -469,6 +469,11 @@
         <command>/opt/atom/atom</command>
       </action>
     </keybind>
+    <keybind key="W-S-a">
+      <action name="Execute">
+        <command>/opt/atom-beta/atom</command>
+      </action>
+    </keybind>
     <keybind key="W-b">
       <action name="Execute">
         <command>baobab</command>
@@ -511,6 +516,11 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
+    <keybind key="W-S-p">
+      <action name="Execute">
+        <command>pavucontrol</command>
+      </action>
+    </keybind>
     <keybind key="W-q">
       <action name="Execute">
         <command>qpdfview</command>
@@ -528,11 +538,6 @@
     <keybind key="W-s">
       <action name="Execute">
         <command>subl3</command>
-      </action>
-    </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <command>terminator</command>
       </action>
     </keybind>
     <keybind key="W-u">

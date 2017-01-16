@@ -16,5 +16,6 @@ cd /home/ryan/.config/conky
 conky -c ./conkyrc -d &
 cd /home/ryan/
 
+xflux -z 13346 &
 urxvt &
 firefox-aurora -silent &

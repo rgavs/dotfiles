@@ -3,109 +3,106 @@
   <menu id="root-menu" label="OpenBox 3">
     <item label="pcmanfm"> <action name="Execute">
         <execute>pcmanfm</execute>
-    </action> </item>
+      </action> </item>
     <item label="firefox-aurora"> <action name="Execute">
         <execute>firefox-aurora</execute>
-    </action> </item>
+      </action> </item>
     <item label="atom"> <action name="Execute">
         <execute>/opt/atom/atom</execute>
-    </action> </item>
+      </action> </item>
     <item label="urxvt"> <action name="Execute">
         <execute>urxvt</execute>
-    </action> </item>
+      </action> </item>
     <separator/>
     <menu id="1" label="IDEs">
       <item label="android studio"> <action name="Execute">
           <execute>sh /home/ryan/android-studio/bin/studio.sh</execute>
-      </action> </item>
+        </action> </item>
       <item label="datagrip"><action name="Execute">
           <execute>datagrip</execute>
-      </action> </item>
+        </action> </item>
       <item label="intellij idea"> <action name="Execute">
           <execute>idea.sh</execute>
-      </action> </item>
+        </action> </item>
       <item label="webstorm"> <action name="Execute">
           <execute>webstorm</execute>
-      </action> </item>
+        </action> </item>
     </menu>
     <menu id="2" label="Editors">
       <item label="atom"> <action name="Execute">
           <execute>/opt/atom/atom</execute>
-      </action> </item>
+        </action> </item>
       <item label="nvim"> <action name="Execute">
           <execute>urxvt -e nvim</execute>
-      </action> </item>
+        </action> </item>
       <item label="sublime text"> <action name="Execute">
           <execute>subl3</execute>
-      </action> </item>
+        </action> </item>
       <item label="Vim"> <action name="Execute">
           <execute>urxvt -e vim</execute>
-      </action> </item>
+        </action> </item>
     </menu>
     <menu id="3" label="Multimedia">
-      <item label="blender"> <action name="Execute">
-          <execute>blender</execute>
-      </action> </item>
       <item label="GIMP"> <action name="Execute">
           <execute>gimp</execute>
-      </action> </item>
+        </action> </item>
       <item label="Google Play Music Player"> <action name="Execute">
-          <execute> sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
-      </action> </item>
+          <execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
+        </action> </item>
       <item label="PulseAudio Volume Control"> <action name="Execute">
           <execute>pavucontrol</execute>
-      </action> </item>
+        </action> </item>
       <item label="qpdfview"> <action name="Execute">
           <execute>qpdfview</execute>
-      </action> </item>
+        </action> </item>
       <item label="vlc"> <action name="Execute">
           <execute>vlc</execute>
-      </action> </item>
+        </action> </item>
     </menu>
     <menu id="4" label="Network">
       <item label="Chromium"> <action name="Execute">
           <execute>chromium</execute>
-      </action> </item>
+        </action> </item>
       <item label="firefox-aurora"> <action name="Execute">
           <execute>firefox-aurora</execute>
-      </action> </item>
+        </action> </item>
       <item label="vivaldi-stable"> <action name="Execute">
           <execute>vivaldi-stable</execute>
-      </action> </item>
+        </action> </item>
       <item label="vuze"> <action name="Execute">
           <execute>vuze</execute>
-      </action> </item>
+        </action> </item>
     </menu>
     <menu id="5" label="Office">
       <item label="LibreOffice Slides"> <action name="Execute">
           <execute>libreoffice --impress</execute>
-      </action> </item>
+        </action> </item>
       <item label="LibreOffice Spreadsheet"> <action name="Execute">
           <execute>libreoffice --calc</execute>
-      </action> </item>
+        </action> </item>
       <item label="LibreOffice Writer"> <action name="Execute">
           <execute>libreoffice --writer</execute>
-      </action> </item>
+        </action> </item>
     </menu>
     <menu id="6" label="Utilities">
       <item label="baobab"> <action name="Execute">
           <execute>baobab</execute>
-      </action> </item>
+        </action> </item>
       <item label="htop"> <action name="Execute">
           <execute>urxvt -e htop</execute>
-      </action> </item>
+        </action> </item>
       <item label="lxappearance"> <action name="Execute">
           <execute>lxappearance</execute>
-      </action> </item>
+        </action> </item>
       <item label="pcmanfm"> <action name="Execute">
           <execute>pcmanfm</execute>
-      </action> </item>
+        </action> </item>
       <item label="ranger"> <action name="Execute">
           <execute>urxvt -e ranger</execute>
-      </action> </item>
+        </action> </item>
       <item label="urxvt"> <action name="Execute">
           <execute>urxvt</execute>
-      </action> </item>
+        </action> </item>
     </menu>
     <separator/>
     <menu id="7" label="OpenBox">
@@ -113,7 +110,7 @@
       <separator/>
       <item label="Suspend"> <action name="Execute">
           <execute>systemctl hybrid-sleep</execute>
-      </action> </item><item label="Exit"> <action name="Exit"/> </item>
+        </action> </item><item label="Exit"> <action name="Exit"/> </item>
     </menu>
   </menu>
 </openbox_menu>
