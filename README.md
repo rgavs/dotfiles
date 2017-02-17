@@ -1,7 +1,6 @@
-#dotfiles
-Maintain [dotfiles](https://github.com/rgavs/dotfiles)/[ARCHER](https://github.com/rgavs/dotfiles/tree/ARCHER) & [KUDU](https://github.com/rgavs/dotfiles/tree/KUDU)
-	- bash
-		- bashrc
+#dotfiles <br />
+Maintain [dotfiles](https://github.com/rgavs/dotfiles)/[ARCHER](https://github.com/rgavs/dotfiles/tree/ARCHER) & [KUDU](https://github.com/rgavs/dotfiles/tree/KUDU) :
+	- bashrc
 	- conky
 	- feh
 	- Idea Intellij
@@ -16,12 +15,9 @@ Other apps w/o configs:
 	- chromium
 	- firefox-aurora
 	- GIMP
-	- [GooglePlayMusicDesktopPlayer](https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-)
+	- [GooglePlayMusicDesktopPlayer](https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-/)
 	- Idea Intellij
-	- jack
 	- LibreOffice
-	- nano
-	- packer
 	- pcmanfm
 	- pulse
 	- qpdfview
@@ -39,5 +35,5 @@ Other apps w/o configs:
 	- rofi/dmenu
 	- retry i3?
 	- rewrite (all?) themes etc for personal styling/minor retouching
-		- create firefox .css theme
+		- create firefox/chrome .css theme
 		- make/use vlc theme
