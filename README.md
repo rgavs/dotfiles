@@ -12,7 +12,7 @@ Configs:
 - terminator
 - tint2
 - wallpapers
-- xinit  
+- xinit
 
 Other apps w/o configs:
 - alsa
