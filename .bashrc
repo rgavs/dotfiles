@@ -9,12 +9,19 @@ then
   return
 fi
 
+eval 'keychain --eval --agents ssh id_rsa'
+clear
+
+export PATH=$PATH:/home/ryan/.gem/ruby/2.4.0/bin/
+
+PS1='\W \[\033[02;31m\]\]> \033[0m'
+
 # Set default environment vars
 export EDITOR='nvim'
 export VISUAL='nvim'
 export LESS='-i -R'
 export LESSHISTFILE=-
-export PATH="$PATH:/home/ryan/.gem/ruby/2.3.0/bin"
+export PATH=$PATH:/home/ryan/.gem/ruby/2.4.0/bin
 export TERM='rxvt-unicode-256color'
 export VDPAU_DRIVER='va_gl'
 export VDPAU_QUIRKS='AvoidVa'
