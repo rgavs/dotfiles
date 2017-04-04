@@ -7,13 +7,12 @@
 """"""""""
 try
   source '~/.config/nvim/autoload/plug.vim'
-  set runtimepath+=~/.config/nvim/init.vim
 catch
 endtry
 
 " FOR VIM
-if !has('nvim')			" these are defaults for nvim
-  set autoread      " but need to be set for vim
+if !has('nvim')			" nvim defaults but need to be set for vim
+  set autoread
   set backspace=2
   set hlsearch
   set incsearch
@@ -71,22 +70,23 @@ map   <leader>. zf  " Fold create
 map   <leader>, zA  " Fold toggle (all under cursor)
 map   <leader>+ :StripWhitespace<CR>  " from `ntpeters/vim-better-whitespace`
 nmap 	r :redo<CR>
-let g:colors_name = 'badwolf'
 let g:badwolf_tabline = 2
-let g:better_whitespace_filetypes_blacklist = ['markdown']
-let g:javascript_plugin_jsdoc = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:colors_name = 'badwolf'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+let g:airline_powerline_fonts = 1
+let g:better_whitespace_filetypes_blacklist = ['markdown']
+let g:javascript_plugin_jsdoc = 1
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeHighlightCursorline = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeWinSize = 25
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:tagbar_width = 30
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_filetype_blacklist = {
@@ -116,13 +116,13 @@ set lazyredraw
 """""""""""""
 set cmdheight=2
 set showcmd
-set splitright
 set splitbelow
+set splitright
 set number
 
-" Backspace works normally
+" Backspace/wrapping work normally
 set backspace=2
-set whichwrap+=<,>,h,l
+set whichwrap+=<,>,h,l,[,]
 
 " Search settings
 set hlsearch
@@ -176,6 +176,7 @@ autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType java :setlocal sw=2 ts=2 sts=2
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
+autocmd FileType markdown :setlocal wrap
 
 " Command vars
 set ai "Auto indent
@@ -211,7 +212,6 @@ nmap <esc>OH 0
 nmap <esc>OF $
 imap <esc>OF <esc>$a
 cmap <esc>OF <end>
-set whichwrap+=<,>,h,l,[,]
 
 " Spell checking
 """""""""""""""""
@@ -225,23 +225,6 @@ function! CmdLine(str)
   emenu Foo.Bar
   unmenu Foo
 endfunction
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-  if &paste
-    return 'PASTE MODE  '
-  en
-  return ''
-endfunction
-
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
 
 " Is buffer empty
 function! IsEmpty()
