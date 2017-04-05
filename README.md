@@ -6,13 +6,12 @@ Configs:
 	- bashrc
 - conky
 - feh
-- Idea Intellij
 - openbox
-- sublime-text 3
-- terminator
 - tint2
 - wallpapers
-- xinit  
+- xinit
+- urxvt
+- vim
 
 Other apps w/o configs:
 - alsa
@@ -20,7 +19,6 @@ Other apps w/o configs:
 - firefox-aurora
 - GIMP
 - [GooglePlayMusicDesktopPlayer](https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-)
-- Idea Intellij
 - jack
 - LibreOffice
 - pcmanfm
