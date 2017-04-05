@@ -17,3 +17,8 @@ img:hover{
   background-color: grey;
 }
 
+img:hover{
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform:  scale(1.25);
+}
+
