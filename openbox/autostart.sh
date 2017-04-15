@@ -1,7 +1,7 @@
 #!/bin/bash
 #autostart
 xset -b
-xinput set-prop 12 275 1
+xinput set-prop 12 274 1
 xinput set-prop 12 277 1
 # grid layout
 obsetlayout 0 2 2 0
@@ -16,6 +16,8 @@ cd /home/ryan/.config/conky
 conky -c ./conkyrc -d &
 cd /home/ryan/
 
-xflux -z 13346 &
+xflux -z 18901 &
+compton --config /home/ryan.config/compton.conf -b &
 urxvt &
-firefox-aurora -silent &
+chromium &
+

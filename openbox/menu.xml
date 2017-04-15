@@ -24,6 +24,9 @@
       <item label="intellij idea"> <action name="Execute">
           <execute>idea.sh</execute>
         </action> </item>
+      <item label="pycharm"> <action name="Execute">
+          <execute>sh /opt/pycharm/bin/pycharm.sh</execute>
+        </action> </item>
       <item label="webstorm"> <action name="Execute">
           <execute>webstorm</execute>
         </action> </item>
@@ -31,6 +34,9 @@
     <menu id="2" label="Editors">
       <item label="atom"> <action name="Execute">
           <execute>/opt/atom/atom</execute>
+        </action> </item>
+      <item label="atom-beta"> <action name="Execute">
+          <execute>/opt/atom-beta/atom</execute>
         </action> </item>
       <item label="nvim"> <action name="Execute">
           <execute>urxvt -e nvim</execute>
@@ -42,7 +48,18 @@
           <execute>urxvt -e vim</execute>
         </action> </item>
     </menu>
-    <menu id="3" label="Multimedia">
+    <menu id="3" label="LibreOffice">
+      <item label="Slides"> <action name="Execute">
+          <execute>libreoffice --impress</execute>
+        </action> </item>
+      <item label="Spreadsheet"> <action name="Execute">
+          <execute>libreoffice --calc</execute>
+        </action> </item>
+      <item label="Writer"> <action name="Execute">
+          <execute>libreoffice --writer</execute>
+        </action> </item>
+    </menu>
+    <menu id="4" label="Multimedia">
       <item label="GIMP"> <action name="Execute">
           <execute>gimp</execute>
         </action> </item>
@@ -59,7 +76,7 @@
           <execute>vlc</execute>
         </action> </item>
     </menu>
-    <menu id="4" label="Network">
+    <menu id="5" label="Network">
       <item label="Chromium"> <action name="Execute">
           <execute>chromium</execute>
         </action> </item>
@@ -71,17 +88,6 @@
         </action> </item>
       <item label="vuze"> <action name="Execute">
           <execute>vuze</execute>
-        </action> </item>
-    </menu>
-    <menu id="5" label="Office">
-      <item label="LibreOffice Slides"> <action name="Execute">
-          <execute>libreoffice --impress</execute>
-        </action> </item>
-      <item label="LibreOffice Spreadsheet"> <action name="Execute">
-          <execute>libreoffice --calc</execute>
-        </action> </item>
-      <item label="LibreOffice Writer"> <action name="Execute">
-          <execute>libreoffice --writer</execute>
         </action> </item>
     </menu>
     <menu id="6" label="Utilities">

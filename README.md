@@ -1,4 +1,10 @@
 #dotfiles
+
+
+![clean desktop](./desktop_screenshot.png)
+<center>clean desktop</center>
+
+
 Maintain [dotfiles](https://github.com/rgavs/dotfiles)/[ARCHER](https://github.com/rgavs/dotfiles/tree/ARCHER) & [KUDU](https://github.com/rgavs/dotfiles/tree/KUDU)
 
 Configs:

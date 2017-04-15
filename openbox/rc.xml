@@ -541,6 +541,11 @@
         <command>systemctl hybrid-sleep</command>
       </action>
     </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>scrot -e 'mv $f /home/ryan/Pictures/Screenshots/'</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -923,4 +928,3 @@
     </application>
   </applications>
 </openbox_config>
-
