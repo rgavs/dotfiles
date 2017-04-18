@@ -1,7 +1,7 @@
-#dotfiles
+# dotfiles
 
 
-![clean desktop](./desktop_screenshot.png)
+![clean desktop](https://raw.github.com/rgavs/dotfiles/KUDU/desktop_screenshot.png)
 <center>clean desktop</center>
 
 
