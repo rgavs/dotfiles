@@ -2,11 +2,13 @@
   position:           relative;
   width:              720px;
   height:             480px;
-  top: 140px;
+  top:                140px;
 }
 
 body{
   background-color:   #282828;
+  position:           fixed;
+  top:                2%;
 }
 
 table{
@@ -14,7 +16,7 @@ table{
 }
 
 img:hover{
-  background-color: grey;
+  background-color:   grey;
 }
 
 img:hover{
