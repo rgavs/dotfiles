@@ -28,7 +28,7 @@
           <execute>sh /opt/pycharm/bin/pycharm.sh</execute>
         </action> </item>
       <item label="webstorm"> <action name="Execute">
-          <execute>webstorm</execute>
+          <execute>sh /opt/webstorm/bin/webstorm.sh</execute>
         </action> </item>
     </menu>
     <menu id="2" label="Editors">
