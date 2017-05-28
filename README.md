@@ -1,4 +1,10 @@
 #dotfiles
+
+
+![clean desktop](https://raw.github.com/rgavs/dotfiles/master/desktop-screenshot.png)
+<center>clean desktop</center>
+
+
 Maintain [dotfiles](https://github.com/rgavs/dotfiles)/[ARCHER](https://github.com/rgavs/dotfiles/tree/ARCHER) & [KUDU](https://github.com/rgavs/dotfiles/tree/KUDU)
 
 Configs:
@@ -6,13 +12,12 @@ Configs:
 	- bashrc
 - conky
 - feh
-- Idea Intellij
 - openbox
-- sublime-text 3
-- terminator
 - tint2
 - wallpapers
 - xinit
+- urxvt
+- vim
 
 Other apps w/o configs:
 - alsa
@@ -20,7 +25,6 @@ Other apps w/o configs:
 - firefox-aurora
 - GIMP
 - [GooglePlayMusicDesktopPlayer](https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-)
-- Idea Intellij
 - jack
 - LibreOffice
 - pcmanfm
