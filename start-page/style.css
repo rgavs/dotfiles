@@ -2,28 +2,25 @@
   position:           relative;
   width:              720px;
   height:             480px;
-  margin:             auto;
-  font-family:        'Rubik', sans-serif;
-  font-size:          20px;
-  top: 140px;
-}
-
-.links{
-  display:            inline;
-  float:              left;
-  width:              220px;
-  padding:            10px;
+  top:                140px;
 }
 
 body{
   background-color:   #282828;
+  position:           fixed;
+  top:                2%;
 }
 
 table{
   width:              85%;
 }
 
-image{
-  width:              300px;
-  height:             188px;
+img:hover{
+  background-color:   grey;
 }
+
+img:hover{
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform:  scale(1.25);
+}
+
