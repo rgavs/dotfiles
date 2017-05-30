@@ -1,25 +1,30 @@
-#container{
+#container  {
   position:           relative;
   width:              720px;
   height:             480px;
   top:                140px;
 }
 
-body{
-  background-color:   #282828;
+body  {
+  /*background-color:   #282828;*/
+  background-image:   url("grid-dark.png");
   position:           fixed;
   top:                2%;
 }
 
-table{
+table {
   width:              85%;
 }
 
-img:hover{
+tr  {
+  height:              200px;
+}
+
+img:hover {
   background-color:   grey;
 }
 
-img:hover{
+img:hover {
   -webkit-transition: all 200ms ease-in;
   -webkit-transform:  scale(1.25);
 }
