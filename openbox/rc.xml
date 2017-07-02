@@ -107,14 +107,6 @@
     </font>
   </theme>
   <desktops>
-    <!-- this stuff is only used at startup, pagers allow you to change them
-       during a session
-
-       these are default values to use when other ones are not already set
-       by other applications, or saved in your session
-
-       use obconf if you want to change these without having to log out
-       and back in -->
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
@@ -124,29 +116,17 @@
       <name>....</name>
     </names>
     <popupTime>500</popupTime>
-    <!-- The number of milliseconds to show the popup for when switching
-       desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>NonPixel</popupShow>
-    <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
     <!-- 'Center', 'Top', or 'Fixed' -->
     <popupFixedPosition>
-      <!-- these are used if popupPosition is set to 'Fixed' -->
       <x>10</x>
-      <!-- positive number for distance from left edge, negative number for
-         distance from right edge, or 'Center' -->
       <y>10</y>
-      <!-- positive number for distance from top edge, negative number for
-         distance from bottom edge, or 'Center' -->
     </popupFixedPosition>
   </resize>
-  <!-- You can reserve a portion of your screen where windows will not cover when
-     they are maximized, or when they are initially placed.
-     Many programs reserve space automatically, but you can use this in other
-     cases. -->
   <margins>
     <top>0</top>
     <bottom>0</bottom>
@@ -160,16 +140,11 @@
     <floatingY>0</floatingY>
     <noStrut>yes</noStrut>
     <stacking>Normal</stacking>
-    <!-- 'Above', 'Normal', or 'Below' -->
     <direction>Horizontal</direction>
-    <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>yes</autoHide>
     <hideDelay>300</hideDelay>
-    <!-- in milliseconds (1000 = 1 second) -->
     <showDelay>300</showDelay>
-    <!-- in milliseconds (1000 = 1 second) -->
     <moveButton>Middle</moveButton>
-    <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
@@ -222,7 +197,6 @@
         <wrap>yes</wrap>
       </action>
     </keybind>
-
     <!-- Go to desktop -->
     <keybind key="W-F1">
       <action name="GoToDesktop">
@@ -244,6 +218,7 @@
         <to>4</to>
       </action>
     </keybind>
+   <!-- For the odd case of adding extra desktops -->
     <keybind key="W-F5">
       <action name="GoToDesktop">
         <to>5</to>
@@ -254,7 +229,6 @@
         <to>6</to>
       </action>
     </keybind>
-
     <!-- Move to desktop X -->
     <keybind key="W-S-F1">
       <action name="SendToDesktop">
@@ -276,6 +250,7 @@
         <to>4</to>
       </action>
     </keybind>
+   <!-- For the odd case of adding extra desktops -->
     <keybind key="W-S-F5">
       <action name="SendToDesktop">
         <to>5</to>
@@ -529,7 +504,7 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>firefox-aurora</command>
+        <command>firefox-beta</command>
       </action>
     </keybind>
     <keybind key="W-g">
@@ -580,12 +555,7 @@
     </keybind>
     <keybind key="W-S-s">
       <action name="Execute">
-        <command>sh -c "STEAM_RUNTIME=1 steam"</command>
-      </action>
-    </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <command>terminator</command>
+        <command>sh -c "STEAM_RUNTIME=1 steam --enable-gpu"</command>
       </action>
     </keybind>
     <keybind key="W-u">
@@ -593,13 +563,14 @@
         <command>urxvt</command>
       </action>
     </keybind>
-    <keybind key="W-S-u">
-      <action name="ToggleDecorations">
+     <keybind key="W-S-u">
+      <action name="Execute">
+        <command>urxvtc</command>
       </action>
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <command>vlc</command>
+        <command>vuze</command>
       </action>
     </keybind>
     <keybind key="W-S-v">
@@ -607,15 +578,20 @@
         <command>vivaldi-stable</command>
       </action>
     </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>webstorm</command>
+      </action>
+    </keybind>
     <!-- Keybind for Vol +/- & Brightness +/- -->
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>alsa-tray -10</command>
+        <command>alsa-tray -8</command>
       </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>alsa-tray +10</command>
+        <command>alsa-tray +8</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
@@ -631,7 +607,7 @@
     </keybind>
     <keybind key="W-Escape">
       <action name="Execute">
-        <command>systemctl hybrid-sleep</command>
+        <command>systemctl suspend</command>
       </action>
     </keybind>
     <keybind key="Print">
@@ -1087,12 +1063,6 @@
 -->
     <application name="*">
       <decor>no</decor>
-    </application>
-    <application name="terminator">
-      <size>
-        <width>1/2</width>
-        <height>100%</height>
-      </size>
     </application>
   </applications>
 </openbox_config>

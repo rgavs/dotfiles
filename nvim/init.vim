@@ -33,17 +33,19 @@ Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java' }
 "Plug 'chrisbra/colorizer'
 Plug 'junegunn/vim-easy-align'
 "Plug 'junegunn/gv.vim'
+Plug 'junegunn/vader.vim', { 'on': 'Vader', 'for': 'vader' }
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'othree/html5.vim', { 'for' : ['html', 'html5'] }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'raimondi/delimitmate'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/NerdCommenter'
+Plug 'scrooloose/NerdTree', { 'on': 'NERDTreeToggle' }
 "Plug 'scrooloose/syntastic'
+Plug 'shougo/vimshell', { 'for': 'shell' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 "Plug 'tpope/vim-surround'
-Plug 'valloric/youcompleteme'
+Plug 'Valloric/YouCompleteMe', { 'do': './build.sh' }
 Plug 'vim-airline/vim-airline'
 Plug 'yggdroot/indentline'
 Plug 'zhaocai/dbext.vim',  { 'for': 'sql' }
@@ -111,9 +113,10 @@ set lazyredraw
 """""""""""""
 set cmdheight=2
 set showcmd
-set splitright
 set splitbelow
+set splitright
 set number
+set nowrap
 
 " Backspace works normally
 set backspace=2
@@ -154,7 +157,7 @@ set ffs=unix,dos,mac
 """"""""
 " Backup etc off
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 " Tab/Indentation
@@ -228,4 +231,26 @@ function! s:DiffWithSaved()
   exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
 com! DiffSaved call s:DiffWithSaved()
+
+function! s:exercism_tests()
+  if expand('%:e') == 'vim'
+    let testfile = printf('%s/%s.vader', expand('%:h'),
+          \ tr(expand('%:h:t'), '-', '_'))
+    if !filereadable(testfile)
+      echoerr 'File does not exist: '. testfile
+      return
+    endif
+    source %
+    execute 'Vader' testfile
+  else
+    let sourcefile = printf('%s/%s.vim', expand('%:h'),
+          \ tr(expand('%:h:t'), '-', '_'))
+    if !filereadable(sourcefile)
+      echoerr 'File does not exist: '. sourcefile
+      return
+    endif
+    execute 'source' sourcefile
+    Vader
+  endif
+endfunction
 

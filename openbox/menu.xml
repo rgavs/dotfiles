@@ -4,8 +4,8 @@
     <item label="pcmanfm"> <action name="Execute">
         <execute>pcmanfm</execute>
     </action> </item>
-    <item label="firefox-aurora"> <action name="Execute">
-        <execute>firefox-aurora</execute>
+    <item label="chromium"> <action name="Execute">
+        <execute>chromium</execute>
     </action> </item>
     <item label="atom"> <action name="Execute">
         <execute>/opt/atom/atom</execute>
@@ -18,17 +18,14 @@
       <item label="atom"><action name="Execute">
           <execute>/opt/atom/atom</execute>
       </action></item>
-      <item label="atom-beta"><action name="Execute">
-          <execute>/opt/atom-beta/atom</execute>
-      </action></item>
       <item label="nvim"> <action name="Execute">
-          <execute>terminator -e nvim</execute>
+          <execute>urxvtc -e nvim</execute>
       </action> </item>
       <item label="SublimeText"> <action name="Execute">
           <execute>subl3</execute>
       </action> </item>
       <item label="vim"> <action name="Execute">
-          <execute>terminator -e vim</execute>
+          <execute>urxvtc -e vim</execute>
       </action> </item>
     </menu>
     <menu id="1" label="IDEs">
@@ -43,6 +40,9 @@
       </action> </item>
       <item label="Idea Intellij"> <action name="Execute">
           <execute>idea.sh</execute>
+      </action> </item>
+      <item label="PyCharm"> <action name="Execute">
+          <execute>pycharm.sh</execute>
       </action> </item>
       <item label="Texmaker"> <action name="Execute">
           <execute>texmaker</execute>
@@ -64,6 +64,12 @@
       <item label="Google Play Music Player"> <action name="Execute">
           <execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
       </action> </item>
+      <item label="Google Music Manager"> <action name="Execute">
+          <execute>google-musicmanager</execute>
+      </action> </item>
+      <item label="Inkscape"> <action name="Execute">
+          <execute>inkscape</execute>
+      </action> </item>
       <item label="PulseAudio Volume Control"> <action name="Execute">
           <execute>pavucontrol</execute>
       </action> </item>
@@ -78,11 +84,11 @@
       <item label="Chromium"> <action name="Execute">
           <execute>chromium</execute>
       </action> </item>
-      <item label="firefox-aurora"> <action name="Execute">
-          <execute>firefox-aurora</execute>
+      <item label="firefox-beta"> <action name="Execute">
+          <execute>firefox-beta</execute>
       </action> </item>
       <item label="Steam"> <action name="Execute">
-          <execute>sh -c "STEAM_RUNTIME=1 steam"</execute>
+          <execute>sh -c "STEAM_RUNTIME=1 steam --enable-gpu"</execute>
       </action> </item>
       <item label="Vivaldi"> <action name="Execute">
           <execute>vivaldi-stable</execute>
@@ -117,6 +123,9 @@
       <item label="baobab"> <action name="Execute">
           <execute>baobab</execute>
       </action> </item>
+      <item label="Corsair Keyboard"> <action name="Execute">
+          <execute>ckb</execute>
+      </action> </item>
       <item label="lxappearance"> <action name="Execute">
           <execute>lxappearance</execute>
       </action> </item>
@@ -124,13 +133,13 @@
           <execute>pcmanfm</execute>
       </action> </item>
       <item label="ranger"> <action name="Execute">
-          <execute>terminator -e ranger</execute>
+          <execute>urxvtc -e ranger</execute>
       </action> </item>
       <item label="urxvt"> <action name="Execute">
           <execute>urxvt</execute>
       </action> </item>
-      <item label="terminator"> <action name="Execute">
-          <execute>terminator</execute>
+      <item label="xterm"> <action name="Execute">
+          <execute>xterm</execute>
       </action> </item>
       <item label="virtualbox"><action name="Execute">
           <execute>virtualbox</execute>

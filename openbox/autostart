@@ -5,7 +5,7 @@
 obsetlayout 0 2 2 0
 
 # background (wallpaper) image
-/home/ryan/.config/fehbg
+/home/ryan/.fehbg
 
 # drawer/panel
 tint2 -c /home/ryan/.config/tint2/tint2rc &
@@ -18,5 +18,9 @@ cd /home/ryan/.config/conky/
 conky -c conkyrc -q -d
 cd /home/ryan/
 
+compton -CGb --config /home/ryan/.config/compton.conf
+
 urxvt &
-firefox-aurora &
+# urxvtd -f -o -q
+#firefox-aurora &
+chromium &
