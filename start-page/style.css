@@ -1,31 +1,31 @@
-#container  {
-  position:           relative;
-  width:              720px;
-  height:             480px;
-  top:                140px;
-}
-
-body  {
-  /*background-color:   #282828;*/
+body {
   background-image:   url("grid-dark.png");
   position:           fixed;
   top:                2%;
 }
 
 table {
-  width:              85%;
+  table-layout:       fixed;
+  position:           relative;
+  left:               149px;
+  width:              1622px;
 }
 
+th {
+  size:               exact;
+  width:              387px;
+}
+
+/*th1 {
+  width:              387;
+}*/
+
 tr  {
-  height:              200px;
+  height:             203px;
 }
 
 img:hover {
   background-color:   grey;
-}
-
-img:hover {
   -webkit-transition: all 200ms ease-in;
   -webkit-transform:  scale(1.25);
 }
-
