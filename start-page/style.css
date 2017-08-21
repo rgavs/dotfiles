@@ -1,24 +1,31 @@
-#container{
+body {
+  background-image:   url("grid-dark.png");
+  position:           fixed;
+  top:                2%;
+}
+
+table {
+  table-layout:       fixed;
   position:           relative;
-  width:              720px;
-  height:             480px;
-  top: 140px;
+  left:               149px;
+  width:              1622px;
 }
 
-body{
-  background-color:   #282828;
+th {
+  size:               exact;
+  width:              387px;
 }
 
-table{
-  width:              85%;
+/*th1 {
+  width:              387;
+}*/
+
+tr  {
+  height:             203px;
 }
 
-img:hover{
-  background-color: grey;
-}
-
-img:hover{
+img:hover {
+  background-color:   grey;
   -webkit-transition: all 200ms ease-in;
   -webkit-transform:  scale(1.25);
 }
-
