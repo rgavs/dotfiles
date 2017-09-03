@@ -1,0 +1,135 @@
+! General
+! Colors
+#define _cursor     #2ECC71
+#define _fg         #2ECC71
+#define _bg         #121212
+#define _color0     #2E3436
+#define _color1     #CC0000
+#define _color2     #2ECC71
+#define _color3     #C4A000
+#define _color4     #3465A4
+#define _color5     #75507B
+#define _color6     #06989A
+#define _color7     #D3D7CF
+#define _color8     #555753
+#define _color9     #EF2929
+#define _color10    #27AE60
+#define _color11    #FCE94F
+#define _color12    #729FCF
+#define _color13    #AD7FA8
+#define _color14    #34E2E2
+#define _color15    #EEEEEC
+
+urxvt*termName:     rxvt-256color
+urxvt*scrollBar:    false
+urxvt*saveLines:    10000
+urxvt*cursorBlink:  true
+urxvt*urgentOnBell:	false
+! Font config
+urxvt*font:         xft:Hack:Regular:size=10
+!	color scheme
+urxvt*cursorColor :	_cursor
+urxvt*foreground :	_fg
+urxvt*background :  _bg
+! black | red | green
+urxvt*color0 :      _color0
+urxvt*color1 :			_color1
+urxvt*color2 :			_color2
+! yellow | blue | purple
+urxvt*color3 :			_color3
+urxvt*color4 :			_color4
+urxvt*color5 :			_color5
+! cyan ! white | bright-black
+urxvt*color6 :			_color6
+urxvt*color7 :			_color7
+urxvt*color8 :			_color8
+! bright-red | bright-green | bright-yellow
+urxvt*color9 :      _color9
+urxvt*color10 :     _color10
+urxvt*color11 :     _color11
+! bright-blue | bright-purple | bright-cyan
+urxvt*color12 :     _color12
+urxvt*color13 :     _color13
+urxvt*color14 :     _color14
+! bright-white
+urxvt*color15 :     _color15
+! Extensions etc
+urxvt.iso14755:     false
+urxvt.url-launcher:     "firefox-aurora"
+urxvt.perl-ext-common:  default,selection-to-clipboard
+! Clipboard
+!urxvt.clipboard.copycmd:	xclip -i
+! -selection clipboard
+!urxvt.clipboard.pastecmd:	xclip -o
+! -selection clipboard
+!urxvt.keysym.C-S-c:			perl:clipboard:copy
+!urxvt.keysym.C-S-v:			perl:clipboard:paste
+! Url-select
+!urxvt.url-select.autocopy:	true
+!urxvt.url-select.button:	  1
+
+! XTerm configs !
+xterm*faceName:       Hack
+xterm*faceSize:       10
+xterm*loginShell:     true
+xterm*saveLines:      1000
+xterm*termName:       xterm-color
+xterm*eightBitInput:  false
+! Colors !
+xterm*cursorColor :	_cursor
+xterm*foreground :	_fg
+xterm*background :	_bg
+! black | red | green
+xterm*color0 :      _color0
+xterm*color1 :      _color1
+xterm*color2 :      _color2
+! yellow | blue | purple
+xterm*color3 :      _color3
+xterm*color4 :      _color4
+xterm*color5 :      _color5
+! cyan ! white | bright-black
+xterm*color6 :      _color6
+xterm*color7 :      _color7
+xterm*color8 :      _color8
+! bright-red | bright-green | bright-yellow
+xterm*color9 :      _color9
+xterm*color10 :     _color10
+xterm*color11 :     _color11
+! bright-blue | bright-purple | bright-cyan
+xterm*color12 :     _color12
+xterm*color13 :     _color13
+xterm*color14 :     _color14
+
+st.termname :     st-256color
+st.shell :        /usr/bin/bash
+st.font :         Hack:Regular:size=10:antialias=true:autohint=true;
+st.cursorshape :  1
+st.cursorblinkontype : 0
+st.bold_font :    1
+st.bellvolume :   0
+!st.opacity :      200
+st*cursorColor :	_cursor
+st*foreground :	 _fg
+st*background :	 _bg
+! black | red | green
+st*color0 :      _color0
+st*color1 :      _color1
+st*color2 :      _color2
+! yellow | blue | purple
+st*color3 :      _color3
+st*color4 :      _color4
+st*color5 :      _color5
+! cyan ! white | bright-black
+st*color6 :      _color6
+st*color7 :      _color7
+st*color8 :      _color8
+! bright-red | bright-green | bright-yellow
+st*color9 :      _color9
+st*color10 :     _color10
+st*color11 :     _color11
+! bright-blue | bright-purple | bright-cyan
+st*color12 :     _color12
+st*color13 :     _color13
+st*color14 :     _color14
+
+
