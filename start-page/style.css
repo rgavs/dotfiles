@@ -11,17 +11,18 @@ table {
   width:              1622px;
 }
 
-th {
+td {
   size:               exact;
   width:              387px;
 }
 
-/*th1 {
-  width:              387;
-}*/
-
-tr  {
+tr {
   height:             203px;
+}
+
+img {
+  display:            block;
+  margin:             auto;
 }
 
 img:hover {
