@@ -18,7 +18,7 @@ cd /home/ryan/.config/conky/
 conky -c conkyrc -q -d
 cd /home/ryan/
 
-compton -CGb --config /home/ryan/.config/compton.conf
+#compton -CGb --config /home/ryan/.config/compton.conf
 
 urxvt &
 # urxvtd -f -o -q

@@ -32,9 +32,8 @@
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
     <primaryMonitor>Active</primaryMonitor>
-    <!-- Monitor where Openbox should place popup dialogs
-         It can be an index from 1, specifying a particular monitor. Or it can be one of the
-       following: 'Mouse' - where the mouse is, or 'Active' - where the active window is -->
+    <!-- Monitor to place popup dialogs
+         Index from 1, specifying monitor. Or: 'Mouse', or 'Active'-->
   </placement>
   <theme>
     <name>Numix</name>
@@ -487,11 +486,11 @@
         <command>/opt/atom/atom</command>
       </action>
     </keybind>
-    <keybind key="W-S-a">
-      <action name="Execute">
-        <command>/opt/atom-beta/atom</command>
-      </action>
-    </keybind>
+    <!--<keybind key="W-S-a">-->
+      <!--<action name="Execute">-->
+        <!--<command>/opt/atom-beta/atom</command>-->
+      <!--</action>-->
+    <!--</keybind>-->
     <keybind key="W-c">
       <action name="Execute">
         <command>chromium</command>
@@ -504,12 +503,17 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>firefox-beta</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-g">
       <action name="Execute">
         <execute>sh -c 'cd /home/ryan/workspace/GPMDP; npm start --dev; cd ~'</execute>
+      </action>
+    </keybind>
+    <keybind key="W-Shift-G">
+      <action name="Execute">
+        <command>gimp</command>
       </action>
     </keybind>
     <keybind key="W-i">
@@ -550,12 +554,12 @@
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>subl3</command>
+        <command>sh -c "STEAM_RUNTIME=1 steam --enable-gpu"</command>
       </action>
     </keybind>
     <keybind key="W-S-s">
-      <action name="Execute">
-        <command>sh -c "STEAM_RUNTIME=1 steam --enable-gpu"</command>
+      <action name="execute">
+        <command>/opt/xst/st</command>
       </action>
     </keybind>
     <keybind key="W-u">
@@ -575,7 +579,7 @@
     </keybind>
     <keybind key="W-S-v">
       <action name="Execute">
-        <command>vivaldi-stable</command>
+        <command>vivaldi-snapshot --debug-packed-apps --silent-debugger-extension-api</command>
       </action>
     </keybind>
     <keybind key="W-w">

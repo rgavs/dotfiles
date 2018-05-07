@@ -30,7 +30,7 @@
     </menu>
     <menu id="1" label="IDEs">
       <item label="Android Studio"> <action name="Execute">
-          <execute>sh /ext/android-studio/bin/studio.sh</execute>
+          <execute>sh /home/ryan/android-studio/bin/studio.sh</execute>
       </action> </item>
       <item label="Clion"> <action name="Execute">
           <execute>clion</execute>
@@ -51,7 +51,7 @@
           <execute>webstorm</execute>
       </action> </item>
     </menu>
-    <menu id="5" label="Multimedia">
+    <menu id="2" label="Multimedia">
       <item label="audactiy"> <action name="Execute">
           <execute>audacity</execute>
       </action> </item>
@@ -80,7 +80,18 @@
           <execute>vlc</execute>
       </action> </item>
     </menu>
-    <menu id="6" label="Network">
+    <menu id="3" label="LibreOffice">
+      <item label="LibreOffice Slides"> <action name="Execute">
+          <execute>libreoffice --impress</execute>
+      </action> </item>
+      <item label="LibreOffice Spreadsheet"> <action name="Execute">
+          <execute>libreoffice --calc</execute>
+      </action> </item>
+      <item label="LibreOffice Writer"> <action name="Execute">
+          <execute>libreoffice --writer</execute>
+      </action> </item>
+    </menu>
+    <menu id="4" label="Network">
       <item label="Chromium"> <action name="Execute">
           <execute>chromium</execute>
       </action> </item>
@@ -97,18 +108,7 @@
           <execute>vuze</execute>
       </action> </item>
     </menu>
-    <menu id="3" label="Office">
-      <item label="LibreOffice Slides"> <action name="Execute">
-          <execute>libreoffice --impress</execute>
-      </action> </item>
-      <item label="LibreOffice Spreadsheet"> <action name="Execute">
-          <execute>libreoffice --calc</execute>
-      </action> </item>
-      <item label="LibreOffice Writer"> <action name="Execute">
-          <execute>libreoffice --writer</execute>
-      </action> </item>
-    </menu>
-    <menu id="37" label="System">
+    <menu id="5" label="System">
       <item label="NVIDIA X Server Settings"> <action name="Execute">
           <execute>nvidia-settings</execute>
       </action> </item>
@@ -119,7 +119,18 @@
           <execute>compton-conf</execute>
       </action> </item>
     </menu>
-    <menu id="38" label="Utilities">
+    <menu id="6" label="Terminals">
+      <item label="urxvt"> <action name="Execute">
+          <execute>urxvt</execute>
+      </action> </item>
+      <item label="st"> <action name="Execute">
+          <execute>st</execute>
+      </action> </item>
+      <item label="xterm"> <action name="Execute">
+          <execute>xterm</execute>
+      </action> </item>
+    </menu>
+    <menu id="7" label="Utilities">
       <item label="baobab"> <action name="Execute">
           <execute>baobab</execute>
       </action> </item>
@@ -132,21 +143,12 @@
       <item label="pcmanfm"> <action name="Execute">
           <execute>pcmanfm</execute>
       </action> </item>
-      <item label="ranger"> <action name="Execute">
-          <execute>urxvtc -e ranger</execute>
-      </action> </item>
-      <item label="urxvt"> <action name="Execute">
-          <execute>urxvt</execute>
-      </action> </item>
-      <item label="xterm"> <action name="Execute">
-          <execute>xterm</execute>
-      </action> </item>
       <item label="virtualbox"><action name="Execute">
           <execute>virtualbox</execute>
       </action> </item>
     </menu>
     <separator/>
-    <menu id="40" label="OpenBox">
+    <menu id="8" label="OpenBox">
       <menu id="client-list-menu"/>
       <item label="Reconfigure"> <action name="Execute">
           <execute>sh -c 'openbox --reconfigure --config-file /home/ryan/.config/openbox/rc.xml'</execute>
