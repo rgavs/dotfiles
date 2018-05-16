@@ -21,9 +21,6 @@
       <item label="nvim"> <action name="Execute">
           <execute>urxvtc -e nvim</execute>
       </action> </item>
-      <item label="SublimeText"> <action name="Execute">
-          <execute>subl3</execute>
-      </action> </item>
       <item label="vim"> <action name="Execute">
           <execute>urxvtc -e vim</execute>
       </action> </item>
