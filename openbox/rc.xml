@@ -486,11 +486,6 @@
         <command>/opt/atom/atom</command>
       </action>
     </keybind>
-    <!--<keybind key="W-S-a">-->
-      <!--<action name="Execute">-->
-        <!--<command>/opt/atom-beta/atom</command>-->
-      <!--</action>-->
-    <!--</keybind>-->
     <keybind key="W-c">
       <action name="Execute">
         <command>chromium</command>
@@ -574,12 +569,12 @@
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-        <command>vuze</command>
+        <command>vivaldi-stable</command>
       </action>
     </keybind>
     <keybind key="W-S-v">
       <action name="Execute">
-        <command>vivaldi-snapshot --debug-packed-apps --silent-debugger-extension-api</command>
+        <command>vuze</command>
       </action>
     </keybind>
     <keybind key="W-w">
