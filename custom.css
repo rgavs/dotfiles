@@ -1,0 +1,6 @@
+#browser .button-toolbar.home, .button-toolbar.rewind, .button-toolbar.next {
+  display : none !important;
+}
+#browser .searchfield-input.vivaldi-searchfield { display : none !important; }
+#browser .iconmenu-container.searchfield { display : none !important; }
+#browser .button.fullwidth { display : none !important; }
